@@ -1,0 +1,234 @@
+<JZML>
+<WINDOW class="Container" text="Keyboard" x="0" y="0" width="952" height="534" id="25" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="WhiteKeys" x="16" y="11" width="592" height="309" id="25" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
+<SCRIPT name="draw()" script="decl highlight = {0.2,0.2,0.8};
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+
+//if (debugStr) debugStr = debugStr + ' white: ' + selected;
+
+decl i,x,y,w,width,height,h,color,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+h = height;
+radius = 1;
+
+decl whiteKeys = { 0,2,4,5,7,9,11 };
+decl blackKeys = { 1,3,6,8,10 };
+
+// Draw white keys
+color = 1.0;
+h = height;
+for (i=0;i<7;i++){
+	x = (width * i) / 7;
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (whiteKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+}
+/*
+// Draw black keys
+color = 0.2;
+h = height * 0.66;
+for (i=0;i<5;i++){
+	if (i<2) x = (width * ((i * 2) + 1) / 14);
+	else x = (width * ((i * 2) + 3) / 14);
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, blackKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (blackKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+	}*/" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/WhiteKeys/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="selected = hit;
+debugStr = debugStr + ' white: ' + hit;
+redrawKeys();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/WhiteKeys/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onResize()" script="canvas_refresh(getobject());" trigger_script="getattribute(getobject(),'rect')" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/WhiteKeys/onResize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="BlackKeys3" x="325" y="11" width="245" height="187" id="23" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
+<SCRIPT name="draw()" script="decl highlight = highlightColor; //{0.2,0.2,0.8};
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+
+//if (debugStr) debugStr = debugStr + ' draw: ' + selected;
+
+decl i,x,y,w,width,height,h,color,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+h = height;
+radius = 1;
+
+//decl whiteKeys = { 0,2,4,5,7,9,11 };
+//decl blackKeys = { 1,3,6,8,10 };
+/*
+// Draw white keys
+color = 1.0;
+h = height;
+for (i=0;i<7;i++){
+	x = (width * i) / 7;
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (whiteKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+}*/
+
+// Draw black keys
+color = 0.2;
+h = height; // * 0.66;
+for (i=2;i<5;i++){
+	//if (i<2) x = (width * ((i * 2) + 1) / 14);
+	//else 
+	x = (width/3) * (i-2);
+	w = (width / 3) - 10;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, blackKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (blackKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+	}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/BlackKeys3/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="selected = hit;
+debugStr = debugStr + ' black: ' + hit;
+redrawKeys();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/BlackKeys3/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onResize()" script="canvas_refresh(getobject());" trigger_script="getattribute(getobject(),'rect')" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/BlackKeys3/onResize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="BlackKeys2" x="63" y="11" width="161" height="187" id="26" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
+<SCRIPT name="draw()" script="decl highlight = highlightColor; //{0.2,0.2,0.8};
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+
+//if (debugStr) debugStr = debugStr + ' draw: ' + selected;
+
+decl i,x,y,w,width,height,h,color,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+h = height;
+radius = 1;
+
+//decl whiteKeys = { 0,2,4,5,7,9,11 };
+//decl blackKeys = { 1,3,6,8,10 };
+/*
+// Draw white keys
+color = 1.0;
+h = height;
+for (i=0;i<7;i++){
+	x = (width * i) / 7;
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (whiteKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+}*/
+
+// Draw black keys
+color = 0.2;
+h = height; // * 0.66;
+for (i=0;i<2;i++){
+//	if (i<2) 
+//x = (width  (i*2));
+x = (width * i) / 2;
+//	else x = (width * ((i * 2) + 3) / 14);
+	w = (width / 2) - 10;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, blackKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (blackKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+	}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/BlackKeys2/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="selected = hit;
+debugStr = debugStr + ' black: ' + hit;
+redrawKeys();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/BlackKeys2/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onResize()" script="canvas_refresh(getobject());" trigger_script="getattribute(getobject(),'rect')" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/BlackKeys2/onResize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Container" text="Debug" x="627" y="11" width="309" height="116" id="28" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Monitor" text="Monitor2" x="0" y="0" width="293" height="48" id="24" state="213" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=debugStr" send="0" osc_target="0" osc_trigger="1" osc_message="/Keyboard/Debug/Monitor2/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton" x="0" y="48" width="285" height="52" id="27" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="865343,1596013" label_off="Clear" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Keyboard/Debug/CustomButton/x" midi_target="0" midi_trigger="1" midi_message="0xB0,0xB0,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Keyboard/Debug/CustomButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onClick()" script="if (x == 1) {
+	debugStr = '';
+}" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/Debug/CustomButton/onClick" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<VARIABLE name="debugStr=" value="''" send="0" osc_target="0" osc_trigger="1" osc_message="/Keyboard/debugStr" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="10351,11363,30752" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="selected=5" send="0" osc_target="0" osc_trigger="1" osc_message="/Keyboard/selected" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="whiteKeys={ 0,2,4,5,7,9,11 }" send="1" osc_target="0" osc_trigger="1" osc_message="/Keyboard/whiteKeys" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="blackKeys={ 1,3,6,8,10 }" send="1" osc_target="0" osc_trigger="1" osc_message="/Keyboard/blackKeys" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="highlightColor={0.2,0.2,0.8}" send="1" osc_target="0" osc_trigger="1" osc_message="/Keyboard/highlightColor" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="redrawKeys()" script="canvas_refresh(WhiteKeys);
+canvas_refresh(BlackKeys2);
+canvas_refresh(BlackKeys3);" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Keyboard/redrawKeys" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>

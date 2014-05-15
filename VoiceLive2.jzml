@@ -1,0 +1,656 @@
+<JZML>
+<PROJECT version="5030" width="1024" height="724" osc_target="-1" midi_target="-1" kbmouse_target="-1" skin="Flat"/>
+<WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="Container" x="0" y="0" width="1024" height="618" id="7" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
+<WINDOW class="Tab" text="Actions" x="0" y="0" width="1008" height="570" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="Actions" x="0" y="0" width="1008" height="550" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
+<WINDOW class="Tab" text="uMod" x="0" y="0" width="992" height="502" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="uMod" x="0" y="0" width="654" height="542" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
+<WINDOW class="Tab" text="Action" x="0" y="0" width="638" height="494" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Switches" text="Switches" x="0" y="21" width="661" height="366" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="8" label="1" multicolor="1" multilabel="1" paint="0" radio="1" row="4">
+<PARAM name="x=" value="0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="items=sizeof(data)" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/items" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="data={5, 15, 27, 51, 78, 90, 105, 120}" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/data" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="cc=Config.cc" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/cc" midi_target="-1" midi_trigger="1" midi_message="0x92,0x92,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,17856,75" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="target=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,17856,75" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="channel=Profile.Current.channel" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="resize()" script="setattribute(getobject(),'column',items);" trigger_script="items" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/uMod/Switches/resize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="output()" script="decl val = firstof(x);
+ctlout(target,cc,val,channel);" trigger_script="firstof(x)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/uMod/Switches/output" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="input(MIDI_ARGS)" script="if (MIDI_ARGS[0] == cc){
+	decl val_in = MIDI_ARGS[1];
+	decl i;
+	for (i=0;i<items;i++){
+		if (val_in == data[i]){
+			x = replace(stretch(0,items),data[i],i);
+			break;
+			}		
+		}
+	}
+" trigger_script="" trigger_type="3" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/uMod/Switches/input" midi_message="0xB0,0xB0,0,127" midi_target="0" flag="1"/>
+<SCRIPT name="load()" script="decl this, red, green, blue, grey, def_col,def_lab;
+
+this = getobject();
+
+setattribute(this, 'cc', 51);
+
+cc = 52;
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+def_col = {red,green,blue,grey};
+def_lab = {
+'No Style',
+'Micromod Clone',
+'Micromod Wider',
+'Thicken',
+'Light Chorus',
+'Medium Chorus',
+'Wide Chorus',
+'Mono Chorus',
+'Fast Rotor',
+'Flanger',
+'Flange Feedback',
+'Flange Negative',
+'Mono Flange',
+'Soft Flange',
+'Panner',
+'Tube',
+'Up Tube',
+'Down Tube',
+'Down & Up Tube',
+'Rise and Fall',
+'Ottowa Wide',
+'Cylon Mono',
+'Cylon Stereo',
+'Alien Voiceover',
+'Underwater'
+}; 
+
+setattribute(this,'labels',def_lab);
+setattribute(this,'colors',def_col);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/uMod/Switches/load" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor3" x="-86" y="-16" width="476" height="46" id="5" state="245" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=debugStr" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Monitor3/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="Config" x="0" y="0" width="638" height="494" id="1" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="ChooseCC" x="39" y="46" width="121" height="431" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Monitor" text="CCMonitor" x="13" y="0" width="160" height="103" id="8" state="245" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="0" unit="" value="1">
+<VARIABLE name="value=CC.result" value="50.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCMonitor/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Fader" text="CCFader" x="0" y="0" width="60" height="415" id="9" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="1" grid_steps="1" label="1" physic="1" precision="3" unit="" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.390572" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCFader/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,3,3" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCFader/z" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,4,4" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCFader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCFader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCFader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/CCFader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<VARIABLE name="result=round(CCFader.x*127)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/ChooseCC/result" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-4067,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="Config" x="0" y="0" width="160" height="48" id="9" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Config">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Config/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="cc=CCFader.result" value="50.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Config/cc" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+</WINDOW>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="Hardtune" x="0" y="0" width="992" height="502" id="1" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="RackHardtune" x="20" y="20" width="254" height="469" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Fader" text="Rate" x="20" y="20" width="60" height="407" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,54,54" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/z" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,5,5" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x*100" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="cc=54" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/cc" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="output()" script="decl val = round(x*127);
+sendCC(cc,val);
+" trigger_script="round(x*127)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/Rate/output" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor" x="0" y="-21" width="457" height="60" id="1" state="244" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=debugStr" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Monitor/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Fader" text="Amount" x="101" y="20" width="60" height="407" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,54,54" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/z" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,5,5" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x*100" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="cc=57" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Amount/cc" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="output()" script="decl val = round(x*127);
+sendCC(cc,val);
+" trigger_script="round(x*127)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/Amount/output" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Fader" text="Window" x="178" y="20" width="60" height="407" id="3" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit=" cents" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,54,54" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/z" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,5,5" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=round((x*600)/10)*10" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="cc=49" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Window/cc" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="output()" script="decl val = round(x*127);
+sendCC(cc,val);
+" trigger_script="round(x*127)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/Window/output" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="debugStr=" value="'target: 0 cc: 0 val: 0 channel: 3.000000'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/debugStr" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onReceive()" script="debug('send:' + send);
+decl _cc = received[0];
+decl _val = received[1];
+if (_cc == Amount.cc) {
+debug('rcva:' + _val);
+Amount.x = _val/127;
+} else if (_cc == Rate.cc) {
+debug('rcvr:' + _val);
+Rate.x = _val/127;
+} else if (_cc == Window.cc) {
+debug('rcvw:' + _val);
+Window.x = _val/127;
+}" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Monitor, showDebug);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Container" text="KeyScale" x="289" y="20" width="694" height="469" id="1" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="Keyboard" x="7" y="131" width="952" height="315" id="25" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="WhiteKeys" x="16" y="11" width="592" height="309" id="25" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
+<SCRIPT name="draw()" script="decl highlight = {0.2,0.2,0.8};
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+
+//if (debugStr) debugStr = debugStr + ' white: ' + selected;
+
+decl i,x,y,w,width,height,h,color,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+h = height;
+radius = 1;
+
+decl whiteKeys = { 0,2,4,5,7,9,11 };
+decl blackKeys = { 1,3,6,8,10 };
+
+// Draw white keys
+color = 1.0;
+h = height;
+for (i=0;i<7;i++){
+	x = (width * i) / 7;
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (whiteKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+}
+/*
+// Draw black keys
+color = 0.2;
+h = height * 0.66;
+for (i=0;i<5;i++){
+	if (i<2) x = (width * ((i * 2) + 1) / 14);
+	else x = (width * ((i * 2) + 3) / 14);
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, blackKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (blackKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+	}*/" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/WhiteKeys/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="selected = hit;
+//debugStr = debugStr + ' white: ' + hit;
+//redrawKeys();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/WhiteKeys/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onResize()" script="canvas_refresh(getobject());" trigger_script="getattribute(getobject(),'rect')" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/WhiteKeys/onResize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="BlackKeys3" x="325" y="11" width="245" height="187" id="26" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
+<SCRIPT name="draw()" script="decl highlight = highlightColor; //{0.2,0.2,0.8};
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+
+//if (debugStr) debugStr = debugStr + ' draw: ' + selected;
+
+decl i,x,y,w,width,height,h,color,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+h = height;
+radius = 1;
+
+//decl whiteKeys = { 0,2,4,5,7,9,11 };
+//decl blackKeys = { 1,3,6,8,10 };
+/*
+// Draw white keys
+color = 1.0;
+h = height;
+for (i=0;i<7;i++){
+	x = (width * i) / 7;
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (whiteKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+}*/
+
+// Draw black keys
+color = 0.2;
+h = height; // * 0.66;
+for (i=2;i<5;i++){
+	//if (i<2) x = (width * ((i * 2) + 1) / 14);
+	//else 
+	x = (width/3) * (i-2);
+	w = (width / 3) - 10;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, blackKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (blackKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+	}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/BlackKeys3/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="selected = hit;
+//redrawKeys();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/BlackKeys3/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onResize()" script="canvas_refresh(getobject());" trigger_script="getattribute(getobject(),'rect')" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/BlackKeys3/onResize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="BlackKeys2" x="63" y="11" width="161" height="187" id="27" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
+<SCRIPT name="draw()" script="decl highlight = highlightColor; //{0.2,0.2,0.8};
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+
+//if (debugStr) debugStr = debugStr + ' draw: ' + selected;
+
+decl i,x,y,w,width,height,h,color,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+h = height;
+radius = 1;
+
+//decl whiteKeys = { 0,2,4,5,7,9,11 };
+//decl blackKeys = { 1,3,6,8,10 };
+/*
+// Draw white keys
+color = 1.0;
+h = height;
+for (i=0;i<7;i++){
+	x = (width * i) / 7;
+	w = (width / 7) - 4;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (whiteKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+}*/
+
+// Draw black keys
+color = 0.2;
+h = height; // * 0.66;
+for (i=0;i<2;i++){
+//	if (i<2) 
+//x = (width  (i*2));
+x = (width * i) / 2;
+//	else x = (width * ((i * 2) + 3) / 14);
+	w = (width / 2) - 10;
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, blackKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, (blackKeys[i] == selected) ? highlight : color);
+	canvas_fill(c);
+	}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/BlackKeys2/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="selected = hit;
+//redrawKeys();" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/BlackKeys2/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onResize()" script="canvas_refresh(getobject());" trigger_script="getattribute(getobject(),'rect')" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/BlackKeys2/onResize" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="selected=5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Keyboard/selected" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="whiteKeys={ 0,2,4,5,7,9,11 }" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Keyboard/whiteKeys" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="blackKeys={ 1,3,6,8,10 }" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Keyboard/blackKeys" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="highlightColor={0.2,0.2,0.8}" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Keyboard/highlightColor" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="redrawKeys()" script="debug('redraw keys');
+canvas_refresh(WhiteKeys);
+canvas_refresh(BlackKeys2);
+canvas_refresh(BlackKeys3);" trigger_script="selected" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Keyboard/redrawKeys" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Switches" text="Scale" x="7" y="7" width="610" height="105" id="26" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="6" label="1" multicolor="0" multilabel="1" paint="0" radio="1" row="1">
+<PARAM name="x=" value="1.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Scale/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,1,1" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Scale/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="decl labels = {
+	'Major',
+	'Minor Harm',
+	'Minor Nat',
+	'Minor Asc',
+	'Chromatic',
+	'Custom'
+};
+
+decl this = getobject();
+setattribute(this,'labels',labels);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Scale/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="key=Keyboard.selected" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/key" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="keyCC=47" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/keyCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="25963,15993,2314" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="scaleCC=48" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/scaleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="inKeyVal=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/inKeyVal" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onKeyChange()" script="if (send) sendCC(keyCC, key);" trigger_script="key" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onKeyChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onScaleChange()" script="decl val = firstof(Scale.x);
+sendCC(scaleCC, val);
+" trigger_script="firstof(Scale.x)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onScaleChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="initHandler()" script="addHandler(keyCC, 'KeyScale', 'inKeyVal');
+addHandler(scaleCC, 'KeyScale', 'inScaleVal');" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/initHandler" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onMidi(cc, val)" script="debug('ks: ' + cc + ',' + val);" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onMidi" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="inKeyChange()" script="debug('in:' + inKeyVal);" trigger_script="inKeyVal" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/inKeyChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="debug('send:' + send);
+decl _cc = received[0];
+decl _val = received[1];
+if (_cc == keyCC) {
+debug('rcvk:' + _val);
+Keyboard.selected = _val;
+//Keyboard.redrawKeys();
+} else if (_cc == scaleCC) {
+debug('rcvs:' + _val);
+decl _x = stretch(0, sizeof(Scale.x));
+_x = replace(_x, 1, _val);
+Scale.x = _x;
+}" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<VARIABLE name="channel=Profile.Current.channel" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="target=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="handlers=" value="'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','KeyScale','KeyScale','inScaleVal'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/handlers" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="1024,0,8192" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="send=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/send" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="received=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/received" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28672,19244,31077" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="waitFrames=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/waitFrames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="sendCC(cc, val)" script="if (send >= waitFrames) {
+debug('->cc: ' + cc + ' val: ' + val);
+ctlout(target,cc,val,channel);
+} else {
+debug('nosend:' + send);
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/sendCC" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onMidi(MIDI_ARGS)" script="decl _cc = MIDI_ARGS[0];
+decl _val = MIDI_ARGS[1];
+decl _chan = MIDI_ARGS[2] + 1;
+debug('<-cc: ' + _cc + ' val: ' + _val + ' chan: ' + _chan);
+
+if (_chan == channel) {
+	debug('ok');
+	
+	send = 0;
+	received = {_cc, _val};
+	//send = 1;
+	/*decl _h = handlers[_cc];
+	if (!_h) {
+		debug('no handler');
+	} else {
+		
+		decl i = 0, s, obj, prop;
+		for (i = 0; i < sizeof(_h); i++) {
+			s = _h[i];
+			if (s) {
+				debug('call: ' + s[0] + ',' + s[1]);
+				obj = findobject(s[0]);
+				setexpression(obj, s[1], _val);
+			}
+		}
+	}*/
+
+}
+
+/*if (MIDI_ARGS[0] == cc){
+	decl val_in = MIDI_ARGS[1];
+	decl i;
+	for (i=0;i<items;i++){
+		if (val_in == data[i]){
+			x = replace(stretch(0,items),data[i],i);
+			break;
+			}		
+		}
+	}
+*/" trigger_script="" trigger_type="3" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onMidi" midi_message="0xB0,0xBF,0,127" midi_target="0" flag="1"/>
+<SCRIPT name="onLoad()" script="//handlers = {''};
+//KeyScale.initHandler();" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="addHandler(cc, obj, prop)" script="debug('add: ' + cc + ',' + obj + ',' + prop);
+decl h = handlers[cc];
+if (!h) h = {''};
+debug('h:' + sizeof(h));
+decl nh = {obj, prop};
+h = {h, nh};
+//set(h, {obj, prop}, sizeof(h) +1);
+debug('h2:' + sizeof(h));
+handlers[cc] = h;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/addHandler" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onFrame()" script="if (send < waitFrames) {
+	if (send == waitFrames -1) debug('snd:' + send);
+	send++;
+}" trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onFrame" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Container" text="Debug" x="660" y="10" width="336" height="394" id="28" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Monitor" text="Monitor5" x="0" y="206" width="320" height="20" id="24" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[5]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor5/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton" x="18" y="326" width="285" height="52" id="27" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="865343,1596013" label_off="Clear" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/CustomButton/x" midi_target="0" midi_trigger="1" midi_message="0xB0,0xB0,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/CustomButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onClick()" script="if (x == 1) {
+	lines = {''};
+}" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/CustomButton/onClick" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor4" x="0" y="226" width="320" height="20" id="28" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[4]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor4/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor3" x="0" y="246" width="320" height="20" id="29" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[3]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor3/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor2" x="0" y="266" width="320" height="20" id="30" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[2]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor2/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor1" x="0" y="286" width="320" height="20" id="31" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[1]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor1/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor0" x="0" y="306" width="320" height="20" id="32" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[0]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor0/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor6" x="0" y="186" width="320" height="20" id="33" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[6]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor6/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor7" x="0" y="166" width="320" height="20" id="34" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[7]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor7/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor8" x="0" y="146" width="320" height="20" id="35" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[8]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor8/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor9" x="0" y="126" width="320" height="20" id="36" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[9]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor9/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor10" x="0" y="106" width="320" height="20" id="37" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[10]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor10/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor11" x="0" y="86" width="320" height="20" id="38" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[11]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor11/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor12" x="0" y="66" width="320" height="20" id="39" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[12]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor12/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor13" x="0" y="46" width="320" height="20" id="40" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[13]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor13/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor14" x="0" y="26" width="320" height="20" id="41" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[14]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor14/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor15" x="0" y="6" width="320" height="20" id="42" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=lines[15]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor15/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<VARIABLE name="lines=" value="'...'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="Device Select" x="0" y="0" width="1008" height="570" id="2" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="Profile" x="24" y="22" width="595" height="376" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Monitor" text="Monitor" x="0" y="0" width="620" height="207" id="1" state="85" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=debugStr" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Monitor/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Switches" text="DeviceSwitch" x="0" y="60" width="211" height="60" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="2" label="0" multicolor="0" multilabel="1" paint="0" radio="1" row="1">
+<PARAM name="x=" value="0.000000,1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/DeviceSwitch/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/DeviceSwitch/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="result=devices[firstof(x)]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/DeviceSwitch/result" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="load()" script="decl this, red, green, blue, grey, def_col,def_lab;
+
+this = getobject();
+
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+def_col = {red,green,blue,grey};
+def_lab = {
+'Touch',
+'Rack'
+}; 
+
+decl i=0, length = sizeof(devices), labels;
+decl o, l;
+for (i=0; i < length; i++) {
+  l = devices[i];
+  o = getexpression(Devices, l);
+  labels[i] = o[1];
+}
+setattribute(this,'labels',labels);
+setattribute(this,'colors',def_col);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/DeviceSwitch/load" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="Current" x="16" y="198" width="160" height="48" id="4" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Current">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="deviceName=" value="'Voicelive Rack'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/deviceName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="channel=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="1024,0,8192" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="deviceId=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/deviceId" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8163,50,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="target=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24547,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="Devices" x="12" y="134" width="160" height="48" id="11" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Devices">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="rack=" value="'deviceName','Voicelive Rack','channel',3,'hardtune',60" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/rack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11641,24930,25971" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="touch=" value="'deviceName','Voicelive Touch','channel',2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/touch" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-4076,0,-256" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Switches" text="Channel" x="163" y="259" width="372" height="87" id="13" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="5" label="3" multicolor="0" multilabel="0" paint="0" radio="1" row="1">
+<PARAM name="x=" value="0.000000,0.000000,0.000000,1.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Channel/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,2,2" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Channel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="result=firstof(x)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Channel/result" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Monitor2" x="172" y="246" width="98" height="32" id="14" state="245" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<VARIABLE name="value=Channel.result" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Monitor2/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Container" text="Monitors" x="351" y="46" width="177" height="181" id="12" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Monitor" text="DeviceName" x="0" y="0" width="160" height="60" id="9" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" precision="3" unit="" value="1">
+<VARIABLE name="value=Current.deviceName" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Monitors/DeviceName/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Monitor" text="Channel" x="0" y="70" width="160" height="60" id="10" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" precision="3" unit="" value="1">
+<VARIABLE name="value=Current.channel" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Monitors/Channel/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+</WINDOW>
+<VARIABLE name="devices={'touch','rack'}" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/devices" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="debugStr=" value="'(deviceName:Voicelive Rack) (channel:3) (hardtune:60) '" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/debugStr" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="switchDevice()" script="
+
+decl deviceName = DeviceSwitch.result;
+decl device;
+if (deviceName == 'touch') {
+  debugStr = 'touch baby';
+  device = Devices.touch;
+  //channel = Touch.channel;
+  //show(Rack, 0);
+  //show(Touch, 1);
+} else if (deviceName == 'rack') {
+  debugStr = 'its the rack man';
+  device = Devices.rack;
+  //channel = Rack.channel;
+  //show(Touch, 0);
+  //show(Rack, 1);
+}
+
+debugStr = '';
+decl i=0, length=sizeof(device), prop, val;
+for (i=0; i < length; i+=2) {
+  prop = device[i];
+  val = device[i+1];
+  debugStr = debugStr + '(' + prop + ':' + val + ') ';
+  setexpression(Current, prop, val);
+}
+" trigger_script="DeviceSwitch.result" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/switchDevice" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="init()" script="Devices.rack = {
+  {'deviceName', 'Voicelive Rack'},
+  {'channel', 3},
+  {'hardtune', 60}
+};
+
+Devices.touch = {
+  {'deviceName', 'Voicelive Touch'},
+  {'channel', 2}
+};" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<VARIABLE name="debugStr=" value="'|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|add: 48,KeyScale,inScaleVal|h:1|add: 47,KeyScale,inKeyVal|h:1|h2:1|add: 48,KeyScale,inScaleVal|h:1|h2:1|add: 47,KeyScale,inKeyVal|h:1|h2:1|add: 48,KeyScale,inScaleVal|h:1|h2:1|add: 47,KeySc" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/debugStr" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="showDebug=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/showDebug" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="debug(msg)" script="Debug.lines = {msg, Debug.lines};" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/debug" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Debug, showDebug);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+</JZML>
