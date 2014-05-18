@@ -5,7 +5,7 @@
 <WINDOW class="Tab" text="Actions" x="0" y="0" width="1008" height="676" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Actions" x="-2" y="0" width="1008" height="685" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
 <WINDOW class="Tab" text="uMod" x="0" y="0" width="992" height="637" state="0" group="0" font="tahoma,11,0" >
-<WINDOW class="Container" text="uMod" x="0" y="0" width="654" height="542" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
+<WINDOW class="Container" text="uMod" x="77" y="203" width="654" height="542" id="6" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
 <WINDOW class="Tab" text="Action" x="0" y="0" width="638" height="494" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Switches" text="Switches" x="0" y="21" width="661" height="366" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="8" label="1" multicolor="1" multilabel="1" paint="0" radio="1" row="4">
 <PARAM name="x=" value="0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/uMod/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -113,7 +113,7 @@ setattribute(this,'colors',def_col);" trigger_script="" trigger_type="5" trigger
 sendCC(cc,val);
 " trigger_script="round(x*127)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/Rate/output" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Monitor" text="Monitor" x="0" y="-21" width="457" height="60" id="1" state="244" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<WINDOW class="Monitor" text="Monitor" x="0" y="-21" width="457" height="60" id="1" state="245" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
 <VARIABLE name="value=debugStr" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Monitor/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <WINDOW class="Fader" text="Amount" x="101" y="20" width="60" height="407" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
@@ -618,7 +618,7 @@ if (_cc == enableCC) {
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Delay/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="Harmony" x="0" y="0" width="992" height="637" id="4" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="Harmony" x="0" y="0" width="992" height="637" id="4" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Harmony" x="-8" y="-8" width="983" height="637" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="CustomButton" text="OnOff" x="0" y="561" width="104" height="60" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="All  On" label_on="All  Off" outline="1">
 <PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -635,7 +635,7 @@ if (_cc == enableCC) {
 " trigger_script="x" trigger_type="0" trigger="3" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/OnOff/off" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Fader" text="Level" x="0" y="0" width="100" height="552" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.810811" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="x=" value="0.783784" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1647,7 +1647,7 @@ v4r[0] = vw*3;
 setattribute(Voice4, 'rect', v4r);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="LemurMenu" text="StyleMenu" x="112" y="11" width="541" height="30" id="5" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Option 1,Option 2">
-<PARAM name="selection=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="selection=" value="10.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="codes=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="pads=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="currentValue=codes[selection]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1762,7 +1762,7 @@ sendCC(choirCC, currentValue, 'Choir Menu Change');
 " trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/ChoirMenu/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Fader" text="ChoirLevel" x="30" y="45" width="100" height="485" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.813807" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirLevel/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="x=" value="0.952756" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirLevel/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirLevel/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="value=x*100" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirLevel/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirLevel/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1871,17 +1871,388 @@ Profile.setDevice(deviceName, device);
 " trigger_script="DeviceSwitch.result" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/DeviceSettings/apply" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="CustomButton" text="DebugButton" x="787" y="8" width="176" height="52" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="DEBUG OFF" label_on="DEBUG ON" outline="1">
-<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/DebugButton/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/DebugButton/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/DebugButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="debug('showDebug: ' + x);
 showDebug = round(x);" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/DebugButton/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="FX" x="0" y="0" width="992" height="637" id="6" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="FX" x="20" y="20" width="905" height="617" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="uMod" x="14" y="0" width="741" height="601" id="6" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="SelectedBG" x="0" y="0" width="160" height="420" id="13" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, selected ? highlight : color);
+	canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/SelectedBG/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/SelectedBG/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="OnOff" x="20" y="328" width="120" height="52" id="11" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="uMod" label_on="uMod" outline="1">
+<PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastValue=" value="114" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="//debug('onChange: ' + x + ': ' + Level.x);
+if (x && Level.x == 0) {
+	debug('SWITCH ON! ' + lastValue);
+	sendCC(levelCC, max(lastValue, Level.minValue+1), 'Switch On');
+} else if (!x) {
+	lastValue = Level.currentValue;
+
+	debug('SWITCH OFF: ' + lastValue);
+	sendCC(levelCC, 0, 'Switch Off');
+} else {
+ debug('TURNED ON WITH FADER?');
+}
+
+//Level.x = x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/OnOff/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Fader" text="Level" x="20" y="37" width="120" height="280" id="12" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.640777" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=x ? round(x*(127-minValue)) + minValue : 0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="db=-60 + (currentValue/127)*60" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/db" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="minValue=80" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/minValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="active = (currentValue > 0);
+OnOff.x = (currentValue > 0);
+if (z) sendCC(levelCC, currentValue, displayName + ' Level');
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+debug(displayName + ' levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="Menu" x="0" y="0" width="160" height="25" id="6" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Option 1,Option 2">
+<PARAM name="selection=" value="17.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Menu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="codes=" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Menu/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="pads=" value="0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Menu/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=codes[selection]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Menu/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onLoad()" script="decl this, red, green, blue, grey;
+
+this = getobject();
+
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+decl colors = {red,green,blue,grey,red,green};
+//decl styles = {
+//0,'Octave Down',
+//1,'Octave Up',
+//2,'Mixed Octaves Choir',
+//3,'Unison Choir'
+//};
+
+decl labels = -1;
+codes = -1; // lookup midi code for pad index
+pads = stretch(0, 128); // lookup pad index for midi code
+
+//decl styles = st;
+decl i=0, length=sizeof(styles), code, label;
+for (i=0; i < length; i+=2) {
+	code = styles[i];
+	label = styles[i+1];
+
+  codes = codes != -1 ? { codes, code } : { code };
+  labels = labels != -1 ? { labels, label } : { label };
+  pads = replace(pads, sizeof(codes)-1, code);
+
+debug(label + ': ' + code);
+}
+
+
+setattribute(this,'items',labels);
+//setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Menu/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="decl _val = received[1];
+decl _src = received[2];
+
+if (_src == 'remote') {
+//decl _x = stretch(0, sizeof(pads));
+//_x = replace(_x, 1, pads[_val]);
+selection = pads[_val];
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Menu/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onChange()" script="log('onChange: ' + currentValue);
+OnOff.x = 1;
+sendCC(styleCC, currentValue, displayName + ' Menu');
+
+
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Menu/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Switches" text="Switches" x="172" y="8" width="461" height="474" id="14" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="2" label="0" multicolor="0" multilabel="1" paint="0" radio="0" row="13">
+<PARAM name="x=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="pads=" value="0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=codes[firstof(x)]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="codes=" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onReceive()" script="decl _val = received[1];
+decl _src = received[2];
+
+if (_src == 'remote') {
+decl _x = stretch(0, sizeof(pads));
+_x = replace(_x, 1, pads[_val]);
+x = pads[_val];
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Switches/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="decl this, red, green, blue, grey;
+
+this = getobject();
+
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+decl colors = {red,green,blue,grey,red,green};
+//decl styles = {
+//0,'Octave Down',
+//1,'Octave Up',
+//2,'Mixed Octaves Choir',
+//3,'Unison Choir'
+//};
+
+decl labels = -1;
+codes = -1; // lookup midi code for pad index
+pads = stretch(0, 128); // lookup pad index for midi code
+
+//decl styles = st;
+decl i=0, length=sizeof(styles), code, label;
+for (i=0; i < length; i+=2) {
+	code = styles[i];
+	label = styles[i+1];
+
+  codes = codes != -1 ? { codes, code } : { code };
+  labels = labels != -1 ? { labels, label } : { label };
+  pads = replace(pads, sizeof(codes)-1, code);
+
+debug(label + ': ' + code);
+}
+
+
+setattribute(this,'labels',labels);
+//setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Switches/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onChange()" script="log('onChange: ' + currentValue);
+OnOff.x = 1;
+sendCC(styleCC, currentValue, displayName + ' Menu');
+
+
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Switches/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="levelCC=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="styleCC=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/styleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="displayName=" value="'uMod'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/displayName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=" value="1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="styles=" value="1,'Micromod Clone',2,'Micromod Wider',3,'Thicken',4,'Light Chorus',5,'Medium Chorus',6,'Wide Chorus',7,'Mono Chorus',8,'Fast Rotor',9,'Flanger',10,'Flange Feedback',11,'Flange Negative',12,'Mono Flange',13,'Soft Flange',14,'Panner',15,'Tube',16,'Up Tube',17,'Down Tube',18,'Down & Up Tube',19,'Rise and Fall',20,'Ottowa Wide',21,'Cylon Mono',22,'Cylon Stereo',23,'Alien Voiceover',24,'Underwater'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/styles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onLoad()" script="displayName = getattribute(getobject(), 'name');
+//setattribute(Text, 'content', displayName);
+
+setattribute(OnOff, 'label_off', displayName); // + ': Off');
+setattribute(OnOff, 'label_on', displayName); // + ': On');
+" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Container" text="Profile" x="585" y="0" width="176" height="56" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Text" text="Devices" x="0" y="0" width="160" height="48" id="11" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Devices">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Devices/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="rack=" value="'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'deviceName','Voicelive Rack','channel',3,'hardtune',60" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Devices/rack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11641,24930,25971" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="touch=" value="'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'deviceName','Voicelive Touch','channel',2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Devices/touch" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-4076,0,-256" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="Current" x="0" y="0" width="160" height="48" id="12" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Current">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="deviceName=" value="'Voicelive Rack'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/deviceName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="channel=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="1024,0,8192" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="deviceId=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/deviceId" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8163,50,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="target=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24547,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="harmonyLevelCC=" value="12" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/harmonyLevelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="harmonyCC=" value="110" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/harmonyCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="harmonyStyleCC=" value="56" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/harmonyStyleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_1_genderCC=" value="29" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_1_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,1,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_1_levelCC=" value="46" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_1_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_1_voicingCC=" value="89" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_1_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28700,732,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_2_genderCC=" value="19" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_2_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_2_levelCC=" value="17" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_2_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_2_voicingCC=" value="61" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_2_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="20502,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_3_genderCC=" value="23" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_3_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_3_levelCC=" value="21" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_3_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_3_voicingCC=" value="88" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_3_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_4_genderCC=" value="27" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_4_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_4_levelCC=" value="25" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_4_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="20502,-19584,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="voice_4_voicingCC=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/voice_4_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="harmonyStyles=" value="0,'1 Voice Above ( High)',1,'1 Voice Below ( Low)',2,'1 Above 1 Below (Low+High)',3,'2 Voices Above (High+Higher)',4,'2 Voices Below ( Lower+Low)',5,'Far Above Far Below (Higher+Lower)',6,'2 Above 1 Below (Low+High+Higher)',7,'1 Above 2 Below (Lower+Low+High)',8,'2 Above Far Below (Lower+High+Higher)',9,'2 Above2 Below (Lower+Low+High+Higher)',10,'Gospel High (Low+High+Higher)',11,'Gospel Low (lower+Low+High)',12,'Upper Choir (High+Higher)',13,'Lower Choir ( Low+Lower)',14,'Bass Boys ( Low+Lower)'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/harmonyStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="choirStyles=" value="0,'Small 1',1,'Small 2',2,'Medium 1',3,'Medium 2',4,'Medium 3',5,'Large',6,'Loose',7,'European',8,'American',9,'Tight',10,'Pitchy',11,'Vibrate',12,'Shake',13,'Speaking',14,'Chaos'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/choirStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29888,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="choirStyleCC=" value="73" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/choirStyleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="choirLevelCC=" value="72" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/choirLevelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="uModStyles=" value="1,'Micromod Clone',2,'Micromod Wider',3,'Thicken',4,'Light Chorus',5,'Medium Chorus',6,'Wide Chorus',7,'Mono Chorus',8,'Fast Rotor',9,'Flanger',10,'Flange Feedback',11,'Flange Negative',12,'Mono Flange',13,'Soft Flange',14,'Panner',15,'Tube',16,'Up Tube',17,'Down Tube',18,'Down & Up Tube',19,'Rise and Fall',20,'Ottowa Wide',21,'Cylon Mono',22,'Cylon Stereo',23,'Alien Voiceover',24,'Underwater'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/Current/uModStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<VARIABLE name="devices={'touch','rack'}" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/devices" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="commonConfig=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/commonConfig" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-20461,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentDevice=" value="'rack'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/currentDevice" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-25120,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="ccNames=" value="-1,-1,-1,'voice_4_voicingCC',-1,-1,-1,-1,-1,-1,-1,-1,'harmonyLevelCC',-1,-1,-1,-1,'voice_2_levelCC',-1,'voice_2_genderCC',-1,'voice_3_levelCC',-1,'voice_3_genderCC',-1,'voice_4_levelCC',-1,'voice_4_genderCC',-1,'voice_1_genderCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'voice_1_levelCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,'harmonyStyleCC',-1,-1,-1,-1,'voice_2_voicingCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'choirLevelCC','choirStyleCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'voice_3_voicingCC','voice_1_voicingCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'harmonyCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Profile/ccNames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,15,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="debug('Profile: onLoad');
+currentDevice = 0;
+ccNames = stretch(-1, 128);
+
+decl common = {
+// Harmony
+	'harmonyCC', 110,
+	'harmonyLevelCC', 12,
+	'harmonyStyleCC', 56,
+	'choirStyleCC', 73,
+	'choirLevelCC', 72,
+
+// Voice 1
+	'voice_1_genderCC', 29,
+	'voice_1_levelCC', 46,
+	'voice_1_voicingCC', 89,
+// Voice 2
+	'voice_2_genderCC', 19,
+	'voice_2_levelCC', 17,
+	'voice_2_voicingCC', 61,
+// Voice 3
+	'voice_3_genderCC', 23,
+	'voice_3_levelCC', 21,
+	'voice_3_voicingCC', 88,
+// Voice 4
+	'voice_4_genderCC', 27,
+	'voice_4_levelCC', 25,
+	'voice_4_voicingCC', 3
+};
+
+setCCNames(common);
+
+Devices.rack = { common, {
+  {'deviceName', 'Voicelive Rack'},
+  {'channel', 3},
+  {'hardtune', 60}
+}};
+
+Devices.touch = { common, {
+  {'deviceName', 'Voicelive Touch'},
+  {'channel', 2}
+}};
+
+Current.harmonyStyles = {
+0, '1 Voice Above ( High)',
+1, '1 Voice Below ( Low)',
+2, '1 Above 1 Below (Low+High)',
+3, '2 Voices Above (High+Higher)',
+4, '2 Voices Below ( Lower+Low)',
+5, 'Far Above Far Below (Higher+Lower)',
+6, '2 Above 1 Below (Low+High+Higher)',
+7, '1 Above 2 Below (Lower+Low+High)',
+8, '2 Above Far Below (Lower+High+Higher)',
+9, '2 Above2 Below (Lower+Low+High+Higher)',
+10, 'Gospel High (Low+High+Higher)',
+11, 'Gospel Low (lower+Low+High)',
+12, 'Upper Choir (High+Higher)',
+13, 'Lower Choir ( Low+Lower)',
+14, 'Bass Boys ( Low+Lower)'
+};
+
+Current.choirStyles = {
+0, 'Small 1',
+1, 'Small 2',
+2, 'Medium 1',
+3, 'Medium 2',
+4, 'Medium 3',
+5, 'Large',
+6, 'Loose',
+7, 'European',
+8, 'American',
+9, 'Tight',
+10, 'Pitchy',
+11, 'Vibrate',
+12, 'Shake',
+13, 'Speaking',
+14, 'Chaos'
+};
+
+Current.uModStyles = {
+//0, 'No Style',
+1, 'Micromod Clone',
+2, 'Micromod Wider',
+3, 'Thicken',
+4, 'Light Chorus',
+5, 'Medium Chorus',
+6, 'Wide Chorus',
+7, 'Mono Chorus',
+8, 'Fast Rotor',
+9, 'Flanger',
+10, 'Flange Feedback',
+11, 'Flange Negative',
+12, 'Mono Flange',
+13, 'Soft Flange',
+14, 'Panner',
+15, 'Tube',
+16, 'Up Tube',
+17, 'Down Tube',
+18, 'Down & Up Tube',
+19, 'Rise and Fall',
+20, 'Ottowa Wide',
+21, 'Cylon Mono',
+22, 'Cylon Stereo',
+23, 'Alien Voiceover',
+24, 'Underwater'
+}; 
+" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Profile/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="applyConfig(target, props)" script="decl i=0, length=sizeof(props), prop, val;
+for (i=0; i < length; i+=2) {
+  prop = props[i];
+  val = props[i+1];
+  setexpression(target, prop, val);
+	debug('SET: ' + prop + ' = ' + val);
+}
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Profile/applyConfig" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="setCCNames(list)" script="decl i=0, length=sizeof(list), prop, val;
+for (i=0; i < length; i+=2) {
+	prop = list[i];
+	val = list[i+1];
+	ccNames[val] = prop;
+	debug('SET CCNAME: ' + val + ' = ' + prop);
+}
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Profile/setCCNames" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="setDevice(name, props)" script="applyConfig(Current, props);
+
+currentDevice = name;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Profile/setDevice" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
 <VARIABLE name="channel=Profile.Current.channel" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="target=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="handlers=" value="'',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'','KeyScale','KeyScale','inScaleVal'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/handlers" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="1024,0,8192" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="send=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/send" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="received=" value="73,0,'local'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/received" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28672,19244,31077" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="received=" value="56,10,'local'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/received" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28672,19244,31077" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="waitFrames=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/waitFrames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="queue=" value="-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/queue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,3,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="currentValues=" value="-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/currentValues" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -2044,7 +2415,11 @@ Harmony.Voices.Voice4.voicingCC = getProfile('voice_4_voicingCC');
 
 //Harmony.harmonyStyles = getProfile('harmonyStyles');
 
-log('Harmony.choirCC: ' + Harmony.choirCC);" trigger_script="Profile.currentDevice" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+log('Harmony.choirCC: ' + Harmony.choirCC);
+
+
+// FX
+FX.uMod.styles = getProfile('uModStyles');" trigger_script="Profile.currentDevice" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="getProfile(key)" script="decl val = getexpression(Profile.Current, key);
 debug('getProfile(' + key + '): ' + stringify(val));
 return val;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/getProfile" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
@@ -2101,7 +2476,7 @@ if (dejitter != -1) {
 	dejitter = nd;
 }" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/dequeueMidi" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Debug" x="663" y="282" width="336" height="394" id="28" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="Debug" x="663" y="282" width="336" height="394" id="28" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Monitor" text="Monitor5" x="0" y="206" width="320" height="20" id="24" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
 <VARIABLE name="value=lines[5]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor5/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
@@ -2162,145 +2537,10 @@ if (dejitter != -1) {
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/PanicButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onPress()" script="enabled = !x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/PanicButton/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<VARIABLE name="lines=" value="'Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','choirCC: 0','Harmony.choirCC: 73','voice width: 150','MIDI OUT { cc:73, val:0 } Choir Menu Change','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','MIDI OUT { cc:12, val:120 } Delay Level','voice width: 150','MIDI OUT { cc:12, val:0 } Delay Level','Harmony.choirCC: 73','voice width: 150','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','MIDI OUT { cc:25, val:0 } Switch Off','MIDI OUT { cc:21, val:0 } Switch Off','MIDI OUT { cc:17, val:0 } Switch Off','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 144','Harmony.choirCC: 73','voice width: 140','Harmony.choirCC: 73','voice width: 136','Harmony.choirCC: 73','voice width: 200','Harmony.choirCC: 73','voice width: 200','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 73','Harmony.choirCC: 0','Harmony.choirCC: 0','MIDI OUT { cc:56, val:0 } Harmony StyleMenu Change','MIDI OUT { cc:12, val:120 } Delay Level','MIDI OUT { cc:12, val:119 } Delay Level','MIDI OUT { cc:12, val:118 } Delay Level','MIDI OUT { cc:12, val:117 } Delay Level','MIDI OUT { cc:12, val:115 } Delay Level','MIDI OUT { cc:12, val:114 } Delay Level','MIDI OUT { cc:12, val:113 } Delay Level','MIDI OUT { cc:12, val:112 } Delay Level','MIDI OUT { cc:12, val:110 } Delay Level','MIDI OUT { cc:12, val:107 } Delay Level','MIDI OUT { cc:3, val:14.000000 } Voicing Voice4','MIDI OUT { cc:3, val:13.000000 } Voicing Voice4','MIDI OUT { cc:88, val:14.000000 } Voicing Voice3','MIDI OUT { cc:88, val:15.000000 } Voicing Voice3','MIDI OUT { cc:88, val:16.000000 } Voicing Voice3','MIDI OUT { cc:61, val:14.000000 } Voicing Voice2','MIDI OUT { cc:61, val:15.000000 } Voicing Voice2','MIDI OUT { cc:61, val:16.000000 } Voicing Voice2','MIDI OUT { cc:89, val:14 } Voicing Voice1','MIDI OUT { cc:3, val:12.000000 } Voicing Voice4','MIDI OUT { cc:3, val:13.000000 } Voicing Voice4','MIDI OUT { cc:3, val:14.000000 } Voicing Voice4','MIDI OUT { cc:3, val:15.000000 } Voicing Voice4','MIDI OUT { cc:3, val:16.000000 } Voicing Voice4','MIDI OUT { cc:3, val:17.000000 } Voicing Voice4','MIDI OUT { cc:3, val:18.000000 } Voicing Voice4'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lines=" value="'Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','voice width: 150','Harmony.choirCC: 73','BROKEN sendCC cc: uMod Menu','onChange: 18','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 0','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 24','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 22','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 20','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 18','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 4','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 16','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 8','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 1','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 17','BROKEN sendCC cc: uMod Menu','onChange: 14','BROKEN sendCC cc: uMod Menu','onChange: 11','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: uMod Menu','onChange: 3','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','BROKEN sendCC cc: Switch Off','BROKEN sendCC cc: Switch Off','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','MIDI OUT { cc:56, val:10 } Harmony StyleMenu Change','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','voice width: 150','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150','voice width: 150','Harmony.choirCC: 73','voice width: 150','Harmony.choirCC: 73','voice width: 150'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
 <WINDOW class="Tab" text="Device Select" x="0" y="0" width="1008" height="676" id="2" state="0" group="0" font="tahoma,11,0" >
-<WINDOW class="Container" text="Profile" x="0" y="0" width="595" height="376" id="3" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Text" text="Devices" x="0" y="0" width="160" height="48" id="11" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Devices">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="rack=" value="'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'deviceName','Voicelive Rack','channel',3,'hardtune',60" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/rack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11641,24930,25971" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="touch=" value="'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'deviceName','Voicelive Touch','channel',2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/touch" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-4076,0,-256" kbmouse_scale="0,1,0,1"/>
-</WINDOW>
-<WINDOW class="Text" text="Current" x="0" y="0" width="160" height="48" id="12" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Current">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="deviceName=" value="'Voicelive Rack'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/deviceName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="channel=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="1024,0,8192" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="deviceId=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/deviceId" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8163,50,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="target=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24547,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="harmonyLevelCC=" value="12" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/harmonyLevelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="harmonyCC=" value="110" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/harmonyCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="harmonyStyleCC=" value="56" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/harmonyStyleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_1_genderCC=" value="29" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_1_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,1,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_1_levelCC=" value="46" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_1_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_1_voicingCC=" value="89" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_1_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28700,732,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_2_genderCC=" value="19" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_2_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_2_levelCC=" value="17" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_2_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_2_voicingCC=" value="61" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_2_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="20502,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_3_genderCC=" value="23" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_3_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_3_levelCC=" value="21" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_3_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_3_voicingCC=" value="88" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_3_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_4_genderCC=" value="27" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_4_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_4_levelCC=" value="25" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_4_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="20502,-19584,18" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="voice_4_voicingCC=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_4_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="harmonyStyles=" value="0,'1 Voice Above ( High)',1,'1 Voice Below ( Low)',2,'1 Above 1 Below (Low+High)',3,'2 Voices Above (High+Higher)',4,'2 Voices Below ( Lower+Low)',5,'Far Above Far Below (Higher+Lower)',6,'2 Above 1 Below (Low+High+Higher)',7,'1 Above 2 Below (Lower+Low+High)',8,'2 Above Far Below (Lower+High+Higher)',9,'2 Above2 Below (Lower+Low+High+Higher)',10,'Gospel High (Low+High+Higher)',11,'Gospel Low (lower+Low+High)',12,'Upper Choir (High+Higher)',13,'Lower Choir ( Low+Lower)',14,'Bass Boys ( Low+Lower)'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/harmonyStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="choirStyles=" value="0,'Small 1',1,'Small 2',2,'Medium 1',3,'Medium 2',4,'Medium 3',5,'Large',6,'Loose',7,'European',8,'American',9,'Tight',10,'Pitchy',11,'Vibrate',12,'Shake',13,'Speaking',14,'Chaos'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/choirStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29888,18" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="choirStyleCC=" value="73" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/choirStyleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="choirLevelCC=" value="72" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/choirLevelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
-</WINDOW>
-<VARIABLE name="devices={'touch','rack'}" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/devices" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="commonConfig=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/commonConfig" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-20461,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentDevice=" value="'rack'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/currentDevice" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-25120,18" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="ccNames=" value="-1,-1,-1,'voice_4_voicingCC',-1,-1,-1,-1,-1,-1,-1,-1,'harmonyLevelCC',-1,-1,-1,-1,'voice_2_levelCC',-1,'voice_2_genderCC',-1,'voice_3_levelCC',-1,'voice_3_genderCC',-1,'voice_4_levelCC',-1,'voice_4_genderCC',-1,'voice_1_genderCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'voice_1_levelCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,'harmonyStyleCC',-1,-1,-1,-1,'voice_2_voicingCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'choirLevelCC','choirStyleCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'voice_3_voicingCC','voice_1_voicingCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'harmonyCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/ccNames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,15,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="init()" script="debug('Profile: onLoad');
-currentDevice = 0;
-ccNames = stretch(-1, 128);
-
-decl common = {
-// Harmony
-	'harmonyCC', 110,
-	'harmonyLevelCC', 12,
-	'harmonyStyleCC', 56,
-	'choirStyleCC', 73,
-	'choirLevelCC', 72,
-
-// Voice 1
-	'voice_1_genderCC', 29,
-	'voice_1_levelCC', 46,
-	'voice_1_voicingCC', 89,
-// Voice 2
-	'voice_2_genderCC', 19,
-	'voice_2_levelCC', 17,
-	'voice_2_voicingCC', 61,
-// Voice 3
-	'voice_3_genderCC', 23,
-	'voice_3_levelCC', 21,
-	'voice_3_voicingCC', 88,
-// Voice 4
-	'voice_4_genderCC', 27,
-	'voice_4_levelCC', 25,
-	'voice_4_voicingCC', 3
-};
-
-setCCNames(common);
-
-Devices.rack = { common, {
-  {'deviceName', 'Voicelive Rack'},
-  {'channel', 3},
-  {'hardtune', 60}
-}};
-
-Devices.touch = { common, {
-  {'deviceName', 'Voicelive Touch'},
-  {'channel', 2}
-}};
-
-Current.harmonyStyles = {
-0, '1 Voice Above ( High)',
-1, '1 Voice Below ( Low)',
-2, '1 Above 1 Below (Low+High)',
-3, '2 Voices Above (High+Higher)',
-4, '2 Voices Below ( Lower+Low)',
-5, 'Far Above Far Below (Higher+Lower)',
-6, '2 Above 1 Below (Low+High+Higher)',
-7, '1 Above 2 Below (Lower+Low+High)',
-8, '2 Above Far Below (Lower+High+Higher)',
-9, '2 Above2 Below (Lower+Low+High+Higher)',
-10, 'Gospel High (Low+High+Higher)',
-11, 'Gospel Low (lower+Low+High)',
-12, 'Upper Choir (High+Higher)',
-13, 'Lower Choir ( Low+Lower)',
-14, 'Bass Boys ( Low+Lower)'
-};
-
-Current.choirStyles = {
-0, 'Small 1',
-1, 'Small 2',
-2, 'Medium 1',
-3, 'Medium 2',
-4, 'Medium 3',
-5, 'Large',
-6, 'Loose',
-7, 'European',
-8, 'American',
-9, 'Tight',
-10, 'Pitchy',
-11, 'Vibrate',
-12, 'Shake',
-13, 'Speaking',
-14, 'Chaos'
-};
-" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="applyConfig(target, props)" script="decl i=0, length=sizeof(props), prop, val;
-for (i=0; i < length; i+=2) {
-  prop = props[i];
-  val = props[i+1];
-  setexpression(target, prop, val);
-	debug('SET: ' + prop + ' = ' + val);
-}
-" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/applyConfig" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="setCCNames(list)" script="decl i=0, length=sizeof(list), prop, val;
-for (i=0; i < length; i+=2) {
-	prop = list[i];
-	val = list[i+1];
-	ccNames[val] = prop;
-	debug('SET CCNAME: ' + val + ' = ' + prop);
-}
-" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/setCCNames" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="setDevice(name, props)" script="applyConfig(Current, props);
-
-currentDevice = name;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/setDevice" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-</WINDOW>
 </WINDOW>
 <VARIABLE name="debugStr=" value="'|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale|add: 48,KeyScale|add: 47,KeyScale'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/debugStr" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="showDebug=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/showDebug" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
