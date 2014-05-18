@@ -1,0 +1,65 @@
+<JZML>
+<WINDOW class="Container" text="Crossfader" x="0" y="0" width="200" height="60" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="879231" label="1" tabbar="1" meta="0">
+<WINDOW class="Fader" text="Fader" x="-4" y="-8" width="200" height="60" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="7" kbmouse_target="-2" capture="1" color="65793" cursor="3" grid="0" grid_steps="1" label="0" physic="0" precision="3" unit="" value="0" zoom="1.000000">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Fader/x" midi_target="7" midi_trigger="1" midi_message="0xB4,0xB4,17,17" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Fader/z" midi_target="7" midi_trigger="1" midi_message="0xB0,0xB0,1,1" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="Fader.x=.5;" trigger_script="" trigger_type="5" trigger="1" osc_message="/Crossfader/Fader/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton" x="140" y="-8" width="52" height="60" id="1" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="65793,65793" label_off="" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton/x" midi_target="7" midi_trigger="1" midi_message="0xB0,0xB0,2,2" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="Cut()" script="Fader.x=1;
+" trigger_script="x" trigger_type="0" trigger="1" osc_message="/Crossfader/CustomButton/Cut" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton2" x="-8" y="-8" width="52" height="60" id="3" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="65793,65793" label_off="" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton2/x" midi_target="7" midi_trigger="1" midi_message="0xB0,0xB0,2,2" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="Cut()" script="Fader.x=0;" trigger_script="x" trigger_type="0" trigger="1" osc_message="/Crossfader/CustomButton2/Cut" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton3" x="66" y="-8" width="126" height="60" id="4" state="240" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="65793,65793" label_off="" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton3/x" midi_target="7" midi_trigger="1" midi_message="0xB0,0xB0,2,2" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton3/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="Cut()" script="if (x==1) {
+Fader.x=.5} ;
+else {
+Fader.x=0} ;" trigger_script="x" trigger_type="0" trigger="1" osc_message="/Crossfader/CustomButton3/Cut" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton4" x="-8" y="-8" width="126" height="60" id="5" state="240" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="65793,65793" label_off="" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton4/x" midi_target="7" midi_trigger="1" midi_message="0xB0,0xB0,2,2" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton4/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="Cut()" script="if (x==1) {
+Fader.x=.5} ;
+else {
+Fader.x=1} ;" trigger_script="x" trigger_type="0" trigger="1" osc_message="/Crossfader/CustomButton4/Cut" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="Text" x="-8" y="-8" width="200" height="60" id="7" state="245" group="0" font="tahoma,24,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3618615" content="|">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/Text/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="CustomButton5" x="66" y="80" width="48" height="60" id="8" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton5/x" midi_target="7" midi_trigger="1" midi_message="0xB0,0xB0,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Crossfader/CustomButton5/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="Cut()" script="Fader.x=.5;" trigger_script="x" trigger_type="0" trigger="1" osc_message="/Crossfader/CustomButton5/Cut" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<SCRIPT name="ShowHide()" script="if (round(Fader.x*4)== 2) {
+show(CustomButton, 1) } ;
+else {
+show(CustomButton, 0) } ;" trigger_script="Fader.x" trigger_type="0" trigger="1" osc_message="/Crossfader/ShowHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="ShowHide2()" script="if (round(Fader.x*4)== 2) {
+show(CustomButton2, 1) } ;
+else {
+show(CustomButton2, 0) } ;" trigger_script="Fader.x" trigger_type="0" trigger="1" osc_message="/Crossfader/ShowHide2" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="ShowHide3()" script="if (Fader.x==0) {
+show(CustomButton3, 1) ; }
+else {
+show(CustomButton3, 0) ; }
+" trigger_script="Fader.x" trigger_type="0" trigger="1" osc_message="/Crossfader/ShowHide3" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="ShowHide4()" script="if (Fader.x==1) {
+show(CustomButton4, 1) ; }
+else {
+show(CustomButton4, 0) ; }" trigger_script="Fader.x" trigger_type="0" trigger="1" osc_message="/Crossfader/ShowHide4" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>
