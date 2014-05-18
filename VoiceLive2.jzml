@@ -3,8 +3,8 @@
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Container" x="0" y="0" width="1024" height="724" id="7" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
 <WINDOW class="Tab" text="Actions" x="0" y="0" width="1008" height="676" state="1" group="0" font="tahoma,11,0" >
-<WINDOW class="Container" text="Actions" x="0" y="0" width="1008" height="676" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
-<WINDOW class="Tab" text="uMod" x="0" y="0" width="992" height="628" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="Actions" x="-9" y="-9" width="1008" height="685" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
+<WINDOW class="Tab" text="uMod" x="0" y="0" width="992" height="637" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="uMod" x="0" y="0" width="654" height="542" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
 <WINDOW class="Tab" text="Action" x="0" y="0" width="638" height="494" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Switches" text="Switches" x="0" y="21" width="661" height="366" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="8" label="1" multicolor="1" multilabel="1" paint="0" radio="1" row="4">
@@ -99,7 +99,7 @@ setattribute(this,'colors',def_col);" trigger_script="" trigger_type="5" trigger
 </WINDOW>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="Hardtune" x="0" y="0" width="992" height="628" id="1" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="Hardtune" x="0" y="0" width="992" height="637" id="1" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="RackHardtune" x="20" y="20" width="254" height="469" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Fader" text="Rate" x="20" y="20" width="60" height="407" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
 <PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Rate/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,54,54" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -113,7 +113,7 @@ setattribute(this,'colors',def_col);" trigger_script="" trigger_type="5" trigger
 sendCC(cc,val);
 " trigger_script="round(x*127)" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/RackHardtune/Rate/output" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Monitor" text="Monitor" x="0" y="-21" width="457" height="60" id="1" state="245" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
+<WINDOW class="Monitor" text="Monitor" x="0" y="-21" width="457" height="60" id="1" state="244" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
 <VARIABLE name="value=debugStr" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/RackHardtune/Monitor/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <WINDOW class="Fader" text="Amount" x="101" y="20" width="60" height="407" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
@@ -410,7 +410,7 @@ Scale.x = _x;
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="Reverb" x="0" y="0" width="992" height="628" id="2" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="Reverb" x="0" y="0" width="992" height="637" id="2" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Reverb" x="20" y="20" width="780" height="450" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="CustomButton" text="OnOff" x="27" y="17" width="175" height="52" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Turn On" label_on="Turn Off" outline="1">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Reverb/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -506,7 +506,7 @@ if (_cc == enableCC) {
 } " trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Reverb/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="Delay" x="0" y="0" width="992" height="628" id="3" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="Delay" x="0" y="0" width="992" height="637" id="3" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Delay" x="0" y="0" width="780" height="450" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="CustomButton" text="OnOff" x="27" y="17" width="175" height="52" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Turn On" label_on="Turn Off" outline="1">
 <PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Delay/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -618,9 +618,9 @@ if (_cc == enableCC) {
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Delay/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="Harmony" x="0" y="0" width="992" height="628" id="4" state="1" group="0" font="tahoma,11,0" >
-<WINDOW class="Container" text="Harmony" x="0" y="0" width="983" height="628" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="CustomButton" text="OnOff" x="0" y="552" width="167" height="60" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Turn On" label_on="Turn Off" outline="1">
+<WINDOW class="Tab" text="Harmony" x="0" y="0" width="992" height="637" id="4" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Container" text="Harmony" x="0" y="0" width="983" height="637" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="CustomButton" text="OnOff" x="0" y="0" width="167" height="60" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Turn On" label_on="Turn Off" outline="1">
 <PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="on()" script="sendCC(enableCC, 64, 'Delay On');
@@ -634,7 +634,7 @@ show(Style, 0);
 show(Level, 0);
 " trigger_script="x" trigger_type="0" trigger="3" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/OnOff/off" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Level" x="0" y="0" width="100" height="552" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
+<WINDOW class="Fader" text="Level" x="0" y="60" width="100" height="552" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
 <PARAM name="x=" value="0.367742" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -648,8 +648,8 @@ show(Level, 0);
 sendCC(levelCC, currentValue, 'Delay Level');
 " trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Switches" text="Style" x="109" y="0" width="218" height="209" id="1" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="2" label="1" multicolor="0" multilabel="1" paint="0" radio="1" row="8">
-<PARAM name="x=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Style/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Switches" text="Style" x="109" y="0" width="218" height="209" id="1" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="2" label="1" multicolor="0" multilabel="1" paint="0" radio="1" row="8">
+<PARAM name="x=" value="0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Style/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Style/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="codes=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Style/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="pads=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Style/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
@@ -664,44 +664,6 @@ blue = RGB(0,0,1);
 grey = RGB(.5,.5,.5);
 
 decl colors = {red,green,blue,grey,red,green};
-//decl styles = {
-//0,'Octave Down',
-//1,'Octave Up',
-//2,'Mixed Octaves Choir',
-//3,'Unison Choir'
-//};
-
-decl styles = {
-0, '1 Voice Above ( High)',
-
-1, '1 Voice Below ( Low)',
-
-2, '1 Above 1 Below (Low+High)',
-
-3, '2 Voices Above (High+Higher)',
-
-4, '2 Voices Below ( Lower+Low)',
-
-5, 'Far Above Far Below (Higher+Lower)',
-
-6, '2 Above 1 Below (Low+High+Higher)',
-
-7, '1 Above 2 Below (Lower+Low+High)',
-
-8, '2 Above Far Below (Lower+High+Higher)',
-
-9, '2 Above2 Below (Lower+Low+High+Higher)',
-
-10, 'Gospel High (Low+High+Higher)',
-
-11, 'Gospel Low (lower+Low+High)',
-
-12, 'Upper Choir (High+Higher)',
-
-13, 'Lower Choir ( Low+Lower)',
-
-14, 'Bass Boys ( Low+Lower)'
-};
 
 decl labels = -1;
 codes = -1; // lookup midi code for pad index
@@ -724,7 +686,7 @@ setattribute(this,'labels',labels);
 //setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Style/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onChange()" script="//debug('onChange: ' + currentValue);
 OnOff.x = 1;
-sendCC(styleCC, currentValue, 'Delay Style Change');
+sendCC(styleCC, currentValue, 'Harmony Style Change');
 
 
 " trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Style/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
@@ -733,9 +695,9 @@ decl _x = stretch(0, sizeof(pads));
 _x = replace(_x, 1, pads[_val]);
 x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Style/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Voices" x="301" y="0" width="837" height="647" id="4" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Container" text="Voice1" x="0" y="0" width="248" height="620" id="3" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Canvas" text="SelectedBG" x="0" y="0" width="179" height="627" id="10" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<WINDOW class="Container" text="Voices" x="100" y="48" width="837" height="600" id="4" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="Voice1" x="0" y="0" width="200" height="589" id="3" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="SelectedBG" x="0" y="0" width="179" height="627" id="10" state="4" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
 <SCRIPT name="draw()" script="
 decl c = getobject();
 decl rect = getattribute(getobject(), 'rect');
@@ -769,23 +731,31 @@ decl selected = 0;
 	canvas_setFillStyle(c, selected ? highlight : color);
 	canvas_fill(c);
 " trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/SelectedBG/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="showHide()" script="show(getobject(), active == 1);" trigger_script="Level.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/SelectedBG/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/SelectedBG/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Level" x="8" y="216" width="164" height="337" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.283186" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Fader" text="Level" x="8" y="216" width="164" height="280" id="2" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=round(x*127)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=x ? round(x*(127-minValue)) + minValue : 0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="db=-60 + (currentValue/127)*60" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/db" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="minValue=80" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/minValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="active = (currentValue > 0);
-sendCC(levelCC, currentValue, 'Level');
+OnOff.x = (currentValue > 0);
+if (z) sendCC(levelCC, currentValue, 'Level');
 " trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="Voicing" x="0" y="0" width="116" height="216" id="8" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="Fader" x="0" y="0" width="60" height="200" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.642857" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Fader" text="Fader" x="0" y="0" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -809,13 +779,19 @@ sendCC(voicingCC, currentValue, 'Voicing');
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/VoiceDown/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onPress()" script="Fader.x = max((Fader.currentValue-1)/Fader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="DisplayVal" x="0" y="70" width="60" height="60" id="7" state="245" group="0" font="tahoma,24,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="+5th">
+<WINDOW class="Text" text="DisplayVal" x="0" y="70" width="60" height="60" id="7" state="245" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="UNI">
 <VARIABLE name="light=active ? 1 : -0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <SCRIPT name="onReceive()" script="decl _val = received[1];
-decl map = {6,4,9,11,16,18,22};
-Fader.x = map[_val]/Fader.maxValue;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="onLoad()" script="show(Fader, 0);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+decl _src = received[2];
+if (_src == 'remote') {
+	debug('REMOTE voicing');
+	decl map = {6,4,9,11,16,18,22};
+	Fader.x = map[_val]/Fader.maxValue;
+} else {
+	//debug('voicing: ' + _src);
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Fader, 1);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onActivate()" script="decl l = active ? 1 : -0.5;
 debug('light: ' + l);
 setattribute(DisplayVal, 'light', l);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/Voicing/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
@@ -830,11 +806,11 @@ setattribute(DisplayVal, 'light', l);" trigger_script="active" trigger_type="0" 
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/Fader/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="init()" script="x=.5;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/Fader/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="FemLabel" x="0" y="100" width="100" height="100" id="9" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Female +8">
+<WINDOW class="Text" text="FemLabel" x="0" y="100" width="100" height="100" id="9" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Female +0">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/FemLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="showHide()" script="show(getobject(), Fader.x > 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/FemLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="MaleLabel" x="0" y="0" width="100" height="100" id="10" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Male +30">
+<WINDOW class="Text" text="MaleLabel" x="0" y="0" width="100" height="100" id="10" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Male +10">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/MaleLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/MaleLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
 </WINDOW>
@@ -906,8 +882,24 @@ if (send) sendCC(genderCC, round(Fader.x * 127), 'Gender Xfader');
 else debug('NOINTERACTION,NOSEND');" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onLoad()" script="btnPressed = -1;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/GenderFader/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="Label" x="8" y="553" width="160" height="48" id="3" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Voice 1">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/Label/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="CustomButton" text="OnOff" x="8" y="496" width="164" height="52" id="11" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Voice1: Off" label_on="Voice1: On" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastValue=" value="127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="debug('onChange: ' + x + ': ' + Level.x);
+if (x && Level.x == 0) {
+	debug('SWITCH ON! ' + lastValue);
+	sendCC(levelCC, max(lastValue, Level.minValue+1), 'Switch On');
+} else if (!x) {
+	lastValue = Level.currentValue;
+
+	debug('SWITCH OFF: ' + lastValue);
+	sendCC(levelCC, 0, 'Switch Off');
+} else {
+ debug('TURNED ON WITH FADER?');
+}
+
+//Level.x = x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/OnOff/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <VARIABLE name="voicingCC=" value="89" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="levelCC=46" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice1/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
@@ -924,243 +916,713 @@ if (_cc == genderCC) {
 } else if (_cc == voicingCC) {
 	debug('1 voicingCC receive:' + _val);
 	
-	//Voicing.onReceive();
+	Voicing.onReceive();
 } else if (_cc == levelCC) {
-	debug('1 levelCC receive: ' + _val);
-	Level.x = _x;
+	Level.onReceive();
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="onActivate()" script="debug('active: ' + active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="debug('active: ' + active);
+
+show(Level, active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="decl name = getattribute(getobject(), 'name');
+//setattribute(Label, 'content', name);
+setattribute(OnOff, 'label_off', name + ': Off');
+setattribute(OnOff, 'label_on', name + ': On');" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice1/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Voice2" x="269" y="0" width="196" height="398" id="4" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="Gender" x="60" y="13" width="60" height="304" id="1" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.354331" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=x*127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onChange()" script="sendCC(genderCC, currentValue, 'Gender');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Gender/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<WINDOW class="Container" text="Voice2" x="200" y="0" width="200" height="589" id="4" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="SelectedBG" x="0" y="0" width="179" height="627" id="10" state="4" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, selected ? highlight : color);
+	canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/SelectedBG/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/SelectedBG/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Level" x="120" y="13" width="60" height="304" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Fader" text="Level" x="8" y="216" width="164" height="280" id="11" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=x*127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onChange()" script="sendCC(levelCC, currentValue, 'Level');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<VARIABLE name="currentValue=x ? round(x*(127-minValue)) + minValue : 0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="db=-60 + (currentValue/127)*60" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/db" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="minValue=80" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/minValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="active = (currentValue > 0);
+OnOff.x = (currentValue > 0);
+if (z) sendCC(levelCC, currentValue, 'Level');
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="Label" x="11" y="334" width="160" height="48" id="3" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Voice 2">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Label/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-</WINDOW>
-<WINDOW class="Container" text="Voicing" x="0" y="0" width="200" height="291" id="8" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="VoicingFader" x="0" y="48" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.785714" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=round(x*maxValue)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="maxValue=28" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/maxValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Container" text="Voicing" x="0" y="0" width="116" height="216" id="12" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Fader" text="Fader" x="0" y="0" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=round(x*maxValue)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="maxValue=28" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/maxValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="debug('currentValue changed: ' + currentValue);
 setattribute(DisplayVal, 'content', voicings[currentValue]);
 sendCC(voicingCC, currentValue, 'Voicing');
-" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoicingFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/Fader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="VoiceUp" x="89" y="0" width="91" height="52" id="4" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="28,28" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<WINDOW class="CustomButton" text="VoiceUp" x="0" y="0" width="60" height="100" id="4" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="28,28" capture="1" color="865343,1596013" label_off="" label_on="" outline="0">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceUp/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceUp/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onPress()" script="VoicingFader.x = min((VoicingFader.currentValue+1)/VoicingFader.maxValue, VoicingFader.maxValue);
+<SCRIPT name="onPress()" script="Fader.x = min((Fader.currentValue+1)/Fader.maxValue, Fader.maxValue);
 " trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceUp/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="VoiceDown" x="0" y="0" width="89" height="52" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="29,29" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<WINDOW class="CustomButton" text="VoiceDown" x="0" y="100" width="60" height="100" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="29,29" capture="1" color="865343,1596013" label_off="" label_on="" outline="0">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceDown/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceDown/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onPress()" script="VoicingFader.x = max((VoicingFader.currentValue-1)/VoicingFader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onPress()" script="Fader.x = max((Fader.currentValue-1)/Fader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="DisplayVal" x="0" y="0" width="160" height="48" id="7" state="245" group="0" font="tahoma,24,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="++2">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Text" text="DisplayVal" x="0" y="70" width="60" height="60" id="7" state="245" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="UNI">
+<VARIABLE name="light=active ? 1 : -0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <SCRIPT name="onReceive()" script="decl _val = received[1];
-decl map = {6,4,9,11,16,18,22};
-VoicingFader.x = map[_val]/VoicingFader.maxValue;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+decl _src = received[2];
+if (_src == 'remote') {
+	debug('REMOTE voicing');
+	decl map = {6,4,9,11,16,18,22};
+	Fader.x = map[_val]/Fader.maxValue;
+} else {
+	//debug('voicing: ' + _src);
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Fader, 1);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="decl l = active ? 1 : -0.5;
+debug('light: ' + l);
+setattribute(DisplayVal, 'light', l);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/Voicing/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<VARIABLE name="voicingCC=61" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="levelCC=17" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="genderCC=19" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Container" text="GenderFader" x="63" y="0" width="116" height="216" id="13" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="879231" label="1" tabbar="1" meta="0">
+<WINDOW class="MultiSlider" text="Fader" x="0" y="0" width="100" height="200" id="14" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" bipolar="1" capture="1" color="1596013" gradient="1" grid="0" grid_steps="1" horizontal="0" label="0" multicolor="0" nbr="1" physic="0">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="tension=0.2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/tension" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="height=0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/height" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="x=.5;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/Fader/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="FemLabel" x="0" y="100" width="100" height="100" id="15" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Female +0">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/FemLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x > 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/FemLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="MaleLabel" x="0" y="0" width="100" height="100" id="16" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Male +10">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/MaleLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/MaleLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
+</WINDOW>
+<WINDOW class="Canvas" text="WarpCenter" x="0" y="70" width="100" height="60" id="17" state="4" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, 1);
+	canvas_closePath(c);
+	//canvas_setFillStyle(c, selected ? highlight : color);
+	//canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/WarpCenter/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="debug('Canvas hit: ' + hit);
+btnPressed = 'warpCenter';
+Fader.x = 0.5;
+" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/WarpCenter/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.2 || Fader.x > 0.8);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/WarpCenter/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="VertLine" x="0" y="0" width="100" height="200" id="18" state="245" group="0" font="tahoma,24,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3618615" content="- -">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/VertLine/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<VARIABLE name="btnPressed=" value="-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/btnPressed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="showAllButtons=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/showAllButtons" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="if (Fader.x < 0.5) {
+	setattribute(MaleLabel, 'content', 'Male +' + (50 - round(Fader.x * 100)));
+} else if (Fader.x > 0.5) {
+	setattribute(FemLabel, 'content', 'Female +' + (50 - round((1 - Fader.x) * 100)));
+
+}
+
+decl send = 0;
+if (Fader.z) {
+	debug('Fader.z');
+	send = 1;
+}
+
+if (btnPressed != -1) {
+	debug('BUTTON: ' + btnPressed);
+	send = 1;
+	btnPressed = -1;
+}
+
+if (send) sendCC(genderCC, round(Fader.x * 127), 'Gender Xfader');
+else debug('NOINTERACTION,NOSEND');" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="btnPressed = -1;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/GenderFader/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="OnOff" x="8" y="496" width="164" height="52" id="14" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Voice2: Off" label_on="Voice2: On" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastValue=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="debug('onChange: ' + x + ': ' + Level.x);
+if (x && Level.x == 0) {
+	debug('SWITCH ON! ' + lastValue);
+	sendCC(levelCC, max(lastValue, Level.minValue+1), 'Switch On');
+} else if (!x) {
+	lastValue = Level.currentValue;
+
+	debug('SWITCH OFF: ' + lastValue);
+	sendCC(levelCC, 0, 'Switch Off');
+} else {
+ debug('TURNED ON WITH FADER?');
+}
+
+//Level.x = x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/OnOff/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="voicingCC=" value="61" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="levelCC=46" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="genderCC=29" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice2/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-1,-1,-1" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onReceive()" script="decl _cc = received[0];
 decl _val = received[1];
 decl _x = _val/127;
 decl this = getobject();
 if (_cc == genderCC) {
-	debug('2 genderCC receive:' + _val);
-	Gender.x = _x;
+	debug('1 genderCC receive:' + _val);
+	//Gender.x = _x;
+	GenderFader.Fader.x = _x;
 } else if (_cc == voicingCC) {
-	debug('2 voicingCC receive:' + _val);
+	debug('1 voicingCC receive:' + _val);
+	
 	Voicing.onReceive();
 } else if (_cc == levelCC) {
-	debug('2 levelCC receive: ' + _val);
-	Level.x = _x;
+	Level.onReceive();
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="debug('active: ' + active);
+
+show(Level, active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="decl name = getattribute(getobject(), 'name');
+//setattribute(Label, 'content', name);
+setattribute(OnOff, 'label_off', name + ': Off');
+setattribute(OnOff, 'label_on', name + ': On');" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice2/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Voice3" x="392" y="0" width="196" height="398" id="5" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="Gender" x="60" y="13" width="60" height="304" id="1" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.204724" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=x*127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onChange()" script="sendCC(genderCC, currentValue, 'Gender');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Gender/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<WINDOW class="Container" text="Voice3" x="400" y="0" width="200" height="589" id="5" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="SelectedBG" x="0" y="0" width="179" height="627" id="10" state="4" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, selected ? highlight : color);
+	canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/SelectedBG/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/SelectedBG/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Level" x="120" y="13" width="60" height="304" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
+<WINDOW class="Fader" text="Level" x="8" y="216" width="164" height="280" id="11" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=x*127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onChange()" script="sendCC(levelCC, currentValue, 'Level');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<VARIABLE name="currentValue=x ? round(x*(127-minValue)) + minValue : 0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="db=-60 + (currentValue/127)*60" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/db" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="minValue=80" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/minValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="active = (currentValue > 0);
+OnOff.x = (currentValue > 0);
+if (z) sendCC(levelCC, currentValue, 'Level');
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="Label" x="11" y="334" width="160" height="48" id="3" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Voice 3">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Label/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-</WINDOW>
-<WINDOW class="Container" text="Voicing" x="0" y="0" width="200" height="291" id="8" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="VoicingFader" x="0" y="48" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=round(x*maxValue)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="maxValue=28" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/maxValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Container" text="Voicing" x="0" y="0" width="116" height="216" id="12" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Fader" text="Fader" x="0" y="0" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=round(x*maxValue)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="maxValue=28" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/maxValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="debug('currentValue changed: ' + currentValue);
 setattribute(DisplayVal, 'content', voicings[currentValue]);
 sendCC(voicingCC, currentValue, 'Voicing');
-" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoicingFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/Fader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="VoiceUp" x="89" y="0" width="91" height="52" id="4" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="28,28" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<WINDOW class="CustomButton" text="VoiceUp" x="0" y="0" width="60" height="100" id="4" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="28,28" capture="1" color="865343,1596013" label_off="" label_on="" outline="0">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceUp/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceUp/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onPress()" script="VoicingFader.x = min((VoicingFader.currentValue+1)/VoicingFader.maxValue, VoicingFader.maxValue);
+<SCRIPT name="onPress()" script="Fader.x = min((Fader.currentValue+1)/Fader.maxValue, Fader.maxValue);
 " trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceUp/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="VoiceDown" x="0" y="0" width="89" height="52" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="29,29" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<WINDOW class="CustomButton" text="VoiceDown" x="0" y="100" width="60" height="100" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="29,29" capture="1" color="865343,1596013" label_off="" label_on="" outline="0">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceDown/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceDown/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onPress()" script="VoicingFader.x = max((VoicingFader.currentValue-1)/VoicingFader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onPress()" script="Fader.x = max((Fader.currentValue-1)/Fader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="DisplayVal" x="11" y="0" width="160" height="48" id="7" state="245" group="0" font="tahoma,24,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="-2ve">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Text" text="DisplayVal" x="0" y="70" width="60" height="60" id="7" state="245" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="UNI">
+<VARIABLE name="light=active ? 1 : -0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <SCRIPT name="onReceive()" script="decl _val = received[1];
-decl map = {6,4,9,11,16,18,22};
-VoicingFader.x = map[_val]/VoicingFader.maxValue;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+decl _src = received[2];
+if (_src == 'remote') {
+	debug('REMOTE voicing');
+	decl map = {6,4,9,11,16,18,22};
+	Fader.x = map[_val]/Fader.maxValue;
+} else {
+	//debug('voicing: ' + _src);
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Fader, 1);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="decl l = active ? 1 : -0.5;
+debug('light: ' + l);
+setattribute(DisplayVal, 'light', l);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/Voicing/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<VARIABLE name="voicingCC=88" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="levelCC=21" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="genderCC=23" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Container" text="GenderFader" x="63" y="0" width="116" height="216" id="13" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="879231" label="1" tabbar="1" meta="0">
+<WINDOW class="MultiSlider" text="Fader" x="0" y="0" width="100" height="200" id="14" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" bipolar="1" capture="1" color="1596013" gradient="1" grid="0" grid_steps="1" horizontal="0" label="0" multicolor="0" nbr="1" physic="0">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="tension=0.2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/tension" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="height=0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/height" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="x=.5;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/Fader/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="FemLabel" x="0" y="100" width="100" height="100" id="15" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Female +0">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/FemLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x > 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/FemLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="MaleLabel" x="0" y="0" width="100" height="100" id="16" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Male +10">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/MaleLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/MaleLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
+</WINDOW>
+<WINDOW class="Canvas" text="WarpCenter" x="0" y="70" width="100" height="60" id="17" state="4" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, 1);
+	canvas_closePath(c);
+	//canvas_setFillStyle(c, selected ? highlight : color);
+	//canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/WarpCenter/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="debug('Canvas hit: ' + hit);
+btnPressed = 'warpCenter';
+Fader.x = 0.5;
+" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/WarpCenter/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.2 || Fader.x > 0.8);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/WarpCenter/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="VertLine" x="0" y="0" width="100" height="200" id="18" state="245" group="0" font="tahoma,24,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3618615" content="- -">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/VertLine/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<VARIABLE name="btnPressed=" value="-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/btnPressed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="showAllButtons=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/showAllButtons" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="if (Fader.x < 0.5) {
+	setattribute(MaleLabel, 'content', 'Male +' + (50 - round(Fader.x * 100)));
+} else if (Fader.x > 0.5) {
+	setattribute(FemLabel, 'content', 'Female +' + (50 - round((1 - Fader.x) * 100)));
+
+}
+
+decl send = 0;
+if (Fader.z) {
+	debug('Fader.z');
+	send = 1;
+}
+
+if (btnPressed != -1) {
+	debug('BUTTON: ' + btnPressed);
+	send = 1;
+	btnPressed = -1;
+}
+
+if (send) sendCC(genderCC, round(Fader.x * 127), 'Gender Xfader');
+else debug('NOINTERACTION,NOSEND');" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="btnPressed = -1;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/GenderFader/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="OnOff" x="8" y="496" width="164" height="52" id="14" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Voice3: Off" label_on="Voice3: On" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastValue=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="debug('onChange: ' + x + ': ' + Level.x);
+if (x && Level.x == 0) {
+	debug('SWITCH ON! ' + lastValue);
+	sendCC(levelCC, max(lastValue, Level.minValue+1), 'Switch On');
+} else if (!x) {
+	lastValue = Level.currentValue;
+
+	debug('SWITCH OFF: ' + lastValue);
+	sendCC(levelCC, 0, 'Switch Off');
+} else {
+ debug('TURNED ON WITH FADER?');
+}
+
+//Level.x = x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/OnOff/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="voicingCC=" value="88" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="levelCC=46" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="genderCC=29" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice3/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-1,-1,-1" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onReceive()" script="decl _cc = received[0];
 decl _val = received[1];
 decl _x = _val/127;
 decl this = getobject();
 if (_cc == genderCC) {
-	debug('3 genderCC receive:' + _val);
-	Gender.x = _x;
+	debug('1 genderCC receive:' + _val);
+	//Gender.x = _x;
+	GenderFader.Fader.x = _x;
 } else if (_cc == voicingCC) {
-	debug('3 voicingCC receive:' + _val);
+	debug('1 voicingCC receive:' + _val);
+	
 	Voicing.onReceive();
 } else if (_cc == levelCC) {
-	debug('3 levelCC receive: ' + _val);
-	Level.x = _x;
+	Level.onReceive();
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="debug('active: ' + active);
+
+show(Level, active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="decl name = getattribute(getobject(), 'name');
+//setattribute(Label, 'content', name);
+setattribute(OnOff, 'label_off', name + ': Off');
+setattribute(OnOff, 'label_on', name + ': On');" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice3/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Voice4" x="588" y="0" width="196" height="398" id="6" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="Gender" x="60" y="13" width="60" height="304" id="1" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.299213" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=x*127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onChange()" script="sendCC(genderCC, currentValue, 'Gender');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Gender/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<WINDOW class="Container" text="Voice4" x="600" y="0" width="200" height="589" id="6" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Canvas" text="SelectedBG" x="0" y="0" width="179" height="627" id="10" state="4" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, selected ? highlight : color);
+	canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/SelectedBG/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/SelectedBG/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Level" x="120" y="13" width="60" height="304" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Fader" text="Level" x="8" y="216" width="164" height="280" id="11" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=x*127" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onChange()" script="sendCC(levelCC, currentValue, 'Level');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<VARIABLE name="currentValue=x ? round(x*(127-minValue)) + minValue : 0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="db=-60 + (currentValue/127)*60" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/db" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="minValue=80" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/minValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="active = (currentValue > 0);
+OnOff.x = (currentValue > 0);
+if (z) sendCC(levelCC, currentValue, 'Level');
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="Label" x="11" y="334" width="160" height="48" id="3" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Voice 4">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Label/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-</WINDOW>
-<WINDOW class="Container" text="Voicing" x="0" y="0" width="200" height="291" id="8" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="Fader" text="VoicingFader" x="0" y="48" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValue=round(x*maxValue)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="maxValue=28" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/maxValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Container" text="Voicing" x="0" y="0" width="116" height="216" id="12" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Fader" text="Fader" x="0" y="0" width="60" height="200" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit="" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=currentValue" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=round(x*maxValue)" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="maxValue=28" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/maxValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="debug('currentValue changed: ' + currentValue);
 setattribute(DisplayVal, 'content', voicings[currentValue]);
 sendCC(voicingCC, currentValue, 'Voicing');
-" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoicingFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/Fader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="VoiceUp" x="89" y="0" width="91" height="52" id="4" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="28,28" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<WINDOW class="CustomButton" text="VoiceUp" x="0" y="0" width="60" height="100" id="4" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="28,28" capture="1" color="865343,1596013" label_off="" label_on="" outline="0">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceUp/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceUp/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onPress()" script="VoicingFader.x = min((VoicingFader.currentValue+1)/VoicingFader.maxValue, VoicingFader.maxValue);
+<SCRIPT name="onPress()" script="Fader.x = min((Fader.currentValue+1)/Fader.maxValue, Fader.maxValue);
 " trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceUp/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="VoiceDown" x="0" y="0" width="89" height="52" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="29,29" capture="1" color="865343,1596013" label_off="" label_on="" outline="1">
+<WINDOW class="CustomButton" text="VoiceDown" x="0" y="100" width="60" height="100" id="5" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="29,29" capture="1" color="865343,1596013" label_off="" label_on="" outline="0">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceDown/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceDown/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onPress()" script="VoicingFader.x = max((VoicingFader.currentValue-1)/VoicingFader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onPress()" script="Fader.x = max((Fader.currentValue-1)/Fader.maxValue, 0);" trigger_script="x" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/VoiceDown/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="DisplayVal" x="11" y="0" width="160" height="48" id="7" state="245" group="0" font="tahoma,24,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="-2ve">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Text" text="DisplayVal" x="0" y="70" width="60" height="60" id="7" state="245" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8159070" content="UNI">
+<VARIABLE name="light=active ? 1 : -0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/DisplayVal/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <SCRIPT name="onReceive()" script="decl _val = received[1];
-decl map = {6,4,9,11,16,18,22};
-VoicingFader.x = map[_val]/VoicingFader.maxValue;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+decl _src = received[2];
+if (_src == 'remote') {
+	debug('REMOTE voicing');
+	decl map = {6,4,9,11,16,18,22};
+	Fader.x = map[_val]/Fader.maxValue;
+} else {
+	//debug('voicing: ' + _src);
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Fader, 1);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="decl l = active ? 1 : -0.5;
+debug('light: ' + l);
+setattribute(DisplayVal, 'light', l);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/Voicing/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<VARIABLE name="voicingCC=3" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="levelCC=25" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="genderCC=27" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Container" text="GenderFader" x="63" y="0" width="116" height="216" id="13" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="879231" label="1" tabbar="1" meta="0">
+<WINDOW class="MultiSlider" text="Fader" x="0" y="0" width="100" height="200" id="14" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" bipolar="1" capture="1" color="1596013" gradient="1" grid="0" grid_steps="1" horizontal="0" label="0" multicolor="0" nbr="1" physic="0">
+<PARAM name="x=" value="0.500000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="tension=0.2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/tension" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="height=0.5" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/height" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="x=.5;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/Fader/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="FemLabel" x="0" y="100" width="100" height="100" id="15" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Female +0">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/FemLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x > 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/FemLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="MaleLabel" x="0" y="0" width="100" height="100" id="16" state="244" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Male +10">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/MaleLabel/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.5);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/MaleLabel/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
+</WINDOW>
+<WINDOW class="Canvas" text="WarpCenter" x="0" y="70" width="100" height="60" id="17" state="4" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+w = width;
+h = height;
+radius = 1;
+
+decl color = 1.0;
+decl highlight = 0.5;
+decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	canvas_addHitRegion(c, 0, 1);
+	canvas_closePath(c);
+	//canvas_setFillStyle(c, selected ? highlight : color);
+	//canvas_fill(c);
+" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/WarpCenter/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="touch(cursor,hit,x,y)" script="debug('Canvas hit: ' + hit);
+btnPressed = 'warpCenter';
+Fader.x = 0.5;
+" trigger_script="" trigger_type="255" trigger_name="onCursorDown" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/WarpCenter/touch" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="showHide()" script="show(getobject(), Fader.x < 0.2 || Fader.x > 0.8);" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/WarpCenter/showHide" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Text" text="VertLine" x="0" y="0" width="100" height="200" id="18" state="245" group="0" font="tahoma,24,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3618615" content="- -">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/VertLine/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<VARIABLE name="btnPressed=" value="-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/btnPressed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="showAllButtons=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/showAllButtons" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="if (Fader.x < 0.5) {
+	setattribute(MaleLabel, 'content', 'Male +' + (50 - round(Fader.x * 100)));
+} else if (Fader.x > 0.5) {
+	setattribute(FemLabel, 'content', 'Female +' + (50 - round((1 - Fader.x) * 100)));
+
+}
+
+decl send = 0;
+if (Fader.z) {
+	debug('Fader.z');
+	send = 1;
+}
+
+if (btnPressed != -1) {
+	debug('BUTTON: ' + btnPressed);
+	send = 1;
+	btnPressed = -1;
+}
+
+if (send) sendCC(genderCC, round(Fader.x * 127), 'Gender Xfader');
+else debug('NOINTERACTION,NOSEND');" trigger_script="Fader.x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="btnPressed = -1;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/GenderFader/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="CustomButton" text="OnOff" x="8" y="496" width="164" height="52" id="14" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Voice4: Off" label_on="Voice4: On" outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastValue=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="debug('onChange: ' + x + ': ' + Level.x);
+if (x && Level.x == 0) {
+	debug('SWITCH ON! ' + lastValue);
+	sendCC(levelCC, max(lastValue, Level.minValue+1), 'Switch On');
+} else if (!x) {
+	lastValue = Level.currentValue;
+
+	debug('SWITCH OFF: ' + lastValue);
+	sendCC(levelCC, 0, 'Switch Off');
+} else {
+ debug('TURNED ON WITH FADER?');
+}
+
+//Level.x = x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/OnOff/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="voicingCC=" value="3" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="levelCC=46" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,2,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="genderCC=29" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/Voice4/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-1,-1,-1" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onReceive()" script="decl _cc = received[0];
 decl _val = received[1];
 decl _x = _val/127;
 decl this = getobject();
 if (_cc == genderCC) {
-	debug('4 genderCC receive:' + _val);
-	Gender.x = _x;
+	debug('1 genderCC receive:' + _val);
+	//Gender.x = _x;
+	GenderFader.Fader.x = _x;
 } else if (_cc == voicingCC) {
-	debug('4 voicingCC receive:' + _val);
+	debug('1 voicingCC receive:' + _val);
+	
 	Voicing.onReceive();
 } else if (_cc == levelCC) {
-	debug('4 levelCC receive: ' + _val);
-	Level.x = _x;
+	Level.onReceive();
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActivate()" script="debug('active: ' + active);
+
+show(Level, active);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/onActivate" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="decl name = getattribute(getobject(), 'name');
+//setattribute(Label, 'content', name);
+setattribute(OnOff, 'label_off', name + ': Off');
+setattribute(OnOff, 'label_on', name + ': On');" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/Voice4/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <VARIABLE name="voicings=" value="'-2ve','--7','--6','--5','--4','--3','--2','-1ve','-7th','-6th','-5th','-4th','-3rd','-2nd','UNI','+2nd','+3rd','+4th','+5th','+6th','+7th','+1ve','++2','++3','++4','++5','++6','++7','+2ve'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Voices/voicings" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="remapVoicing(val)" script="//In	voice   out
@@ -1202,11 +1664,75 @@ decl map = {6,9,11,16,18,22};" trigger_script="" trigger_type="4" trigger="1" cl
 '++6', //26,
 '++7', //27,
 '+2ve' //28,
-};" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+};
+
+decl v1r = getattribute(Voice1, 'rect');
+decl v2r = getattribute(Voice2, 'rect');
+v2r[0] = 200;
+setattribute(Voice2, 'rect', v2r);
+decl v3r = getattribute(Voice3, 'rect');
+v3r[0] = 400;
+setattribute(Voice3, 'rect', v3r);
+decl v4r = getattribute(Voice4, 'rect');
+v4r[0] = 600;
+setattribute(Voice4, 'rect', v4r);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Voices/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="StyleMenu" x="189" y="9" width="541" height="30" id="5" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Option 1,Option 2">
+<PARAM name="selection=" value="1.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="codes=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="pads=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=codes[selection]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onLoad()" script="decl this, red, green, blue, grey;
+
+this = getobject();
+
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+decl colors = {red,green,blue,grey,red,green};
+//decl styles = {
+//0,'Octave Down',
+//1,'Octave Up',
+//2,'Mixed Octaves Choir',
+//3,'Unison Choir'
+//};
+
+decl labels = -1;
+codes = -1; // lookup midi code for pad index
+pads = stretch(0, 128); // lookup pad index for midi code
+
+decl i=0, length=sizeof(styles), code, label;
+for (i=0; i < length; i+=2) {
+	code = styles[i];
+	label = styles[i+1];
+
+  codes = codes != -1 ? { codes, code } : { code };
+  labels = labels != -1 ? { labels, label } : { label };
+  pads = replace(pads, sizeof(codes)-1, code);
+
+debug(label + ': ' + code);
+}
+
+
+setattribute(this,'items',labels);
+//setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StyleMenu/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="decl _val = received[1];
+//decl _x = stretch(0, sizeof(pads));
+//_x = replace(_x, 1, pads[_val]);
+selection = pads[_val];" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StyleMenu/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onChange()" script="//debug('onChange: ' + currentValue);
+OnOff.x = 1;
+sendCC(styleCC, currentValue, 'Harmony Style Change');
+
+
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StyleMenu/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <VARIABLE name="styleCC=56" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/styleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="enableCC=110" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/enableCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8192,2,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="levelCC=12" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="styles=" value="0,'1 Voice Above ( High)',1,'1 Voice Below ( Low)',2,'1 Above 1 Below (Low+High)',3,'2 Voices Above (High+Higher)',4,'2 Voices Below ( Lower+Low)',5,'Far Above Far Below (Higher+Lower)',6,'2 Above 1 Below (Low+High+Higher)',7,'1 Above 2 Below (Lower+Low+High)',8,'2 Above Far Below (Lower+High+Higher)',9,'2 Above2 Below (Lower+Low+High+Higher)',10,'Gospel High (Low+High+Higher)',11,'Gospel Low (lower+Low+High)',12,'Upper Choir (High+Higher)',13,'Lower Choir ( Low+Lower)',14,'Bass Boys ( Low+Lower)'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/styles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8242,25153" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onReceive()" script="decl _cc = received[0];
 decl _val = received[1];
 if (_cc == enableCC) {
@@ -1215,18 +1741,19 @@ if (_cc == enableCC) {
 } else if (_cc == styleCC) {
 	debug('styleCC receive:' + _val);
 	Style.onReceive();
+	StyleMenu.onReceive();
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Style, 0);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
 <VARIABLE name="channel=Profile.Current.channel" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/channel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="target=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="handlers=" value="'',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'','KeyScale','KeyScale','inScaleVal'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/handlers" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="1024,0,8192" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="send=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/send" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="received=" value="12.000000,109.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/received" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28672,19244,31077" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="received=" value="89.000000,14,'local'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/received" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-28672,19244,31077" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="waitFrames=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/waitFrames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="queue=" value="-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/queue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,3,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="currentValues=" value="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/currentValues" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="enabled=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/enabled" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValues=" value="-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/currentValues" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onMidi(MIDI_ARGS)" script="decl _cc = MIDI_ARGS[0];
 decl _val = MIDI_ARGS[1];
 decl _chan = MIDI_ARGS[2] + 1;
@@ -1238,8 +1765,8 @@ debug('MIDI IN ' + stringify({
 
 if (_chan == channel) {
 	//debug('ok');
-	
-	queueMIDI(_cc, _val);
+	currentValues[_cc] = _val;
+	queueMidi(_cc, _val, 'remote');
 	//send = 0;
 	//received = {_cc, _val};
 	//send = 1;
@@ -1275,7 +1802,7 @@ if (_chan == channel) {
 <SCRIPT name="onLoad()" script="//handlers = {''};
 //KeyScale.initHandler();
 queue = -1;
-currentValues = stretch(0, 128); // hold current MIDI control values
+currentValues = stretch(-1, 128); // hold current MIDI control values
 
 
 debug('Actions: onLoad');" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
@@ -1284,21 +1811,7 @@ debug('Actions: onLoad');" trigger_script="" trigger_type="5" trigger="1" clock=
 	//if (send == waitFrames -1) debug('MIDI send ON');
 //	send++;
 	//return;
-//}
-
-if (queue != -1) {
-	//if (send >= waitFrames) debug('MIDI send OFF');
-	//send = 0;
-	received = subarray(queue, 0, 2);
-	queue = subarray(queue, 2, sizeof(queue)-2);
-	if (sizeof(queue) < 2) {
-		//debug('end MIDI queue');
-		queue = -1;
-	}
-
-	debug('POP: ' + received[0] + ' , ' + received[1] + ' nxt: ' + queue[0]);
-	return;
-}
+dequeueMidi();
 " trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onFrame" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="sendCC(cc, val, extra)" script="//debug('sendCC ' + extra);
 decl dbg = stringify({
@@ -1324,23 +1837,23 @@ ctlout(target,cc,val,channel);
 
 currentValues[cc] = val; // store current value
 
+if (val < 0) {
+	debug('sendCC: BROKEN');
+}
+
 // update other controls (simulate incoming)
-queueMIDI(cc, val);
+queueMidi(cc, val, 'local');
 
 //} else {
 //debug('NOSEND(' + send + '):' + dbg);
 //}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/sendCC" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="queueMIDI(cc, val)" script="if (!enabled) {
-	debug('NOT ENABLED'); 
-	return;
-}
-queue = (queue == -1) ? {cc, val} : { queue, {cc, val} };" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/queueMIDI" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onDeviceChange()" script="decl c = Profile.currentDevice;
 
 debug('Current device: ' + c);
 if (c == 'none') return;
 
 // Harmony
+Harmony.styles = getProfile('harmonyStyles');
 Harmony.enableCC = getProfile('harmonyCC');
 Harmony.levelCC = getProfile('harmonyLevelCC');
 Harmony.styleCC = getProfile('harmonyStyleCC');
@@ -1365,16 +1878,51 @@ Harmony.Voices.Voice4.genderCC = getProfile('voice_4_genderCC');
 Harmony.Voices.Voice4.levelCC = getProfile('voice_4_levelCC');
 Harmony.Voices.Voice4.voicingCC = getProfile('voice_4_voicingCC');
 
-" trigger_script="Profile.currentDevice" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+
+Harmony.styles = getProfile('harmonyStyles');" trigger_script="Profile.currentDevice" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="getProfile(key)" script="decl val = getexpression(Profile.Current, key);
-debug('getProfile(' + key + '): ' + val);
+debug('getProfile(' + key + '): ' + stringify(val));
 return val;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/getProfile" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="queueMidi(cc, val, source)" script="if (!enabled) {
+	debug('NOT ENABLED'); 
+	return;
+}
+if (val < 0) {
+	debug('queueMidi: BROKEN');
+}
+queue = (queue == -1) ? {cc, val, source} : { queue, {cc, val, source} };" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/queueMidi" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="dequeueMidi()" script="//}
+
+// Process incoming MIDI queue
+decl cc, val, src, cur;
+if (queue != -1) {
+	decl len = 3;
+	//if (send >= waitFrames) debug('MIDI send OFF');
+	//send = 0;
+	received = subarray(queue, 0, len);
+	queue = subarray(queue, len, sizeof(queue)-len);
+	if (sizeof(queue) < len) {
+		//debug('end MIDI queue');
+		queue = -1;
+	}
+	cc = received[0];
+	val = received[1];
+	src = received[2];
+	cur = currentValues[cc];
+
+	if (val != currentValues[cc]) {
+		debug('VALUE SHIFT queue: ' + val + ' current: ' + currentValues[cc]);
+		val = currentValues[cc];
+	}
+	debug('POP: ' + cc + ' , ' + val + ' (' + cur + ') src: ' + src + ' nxt: ' + queue[0]);
+	return;
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/dequeueMidi" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Debug" x="663" y="282" width="336" height="394" id="28" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="Debug" x="663" y="282" width="336" height="394" id="28" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Monitor" text="Monitor5" x="0" y="206" width="320" height="20" id="24" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
 <VARIABLE name="value=lines[5]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor5/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<WINDOW class="CustomButton" text="CustomButton" x="18" y="326" width="285" height="52" id="27" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="865343,1596013" label_off="Clear" label_on="" outline="1">
+<WINDOW class="CustomButton" text="CustomButton" x="0" y="326" width="160" height="52" id="27" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="865343,1596013" label_off="Clear" label_on="" outline="1">
 <PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/CustomButton/x" midi_target="0" midi_trigger="1" midi_message="0xB0,0xB0,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/CustomButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onClick()" script="if (x == 1) {
@@ -1426,7 +1974,12 @@ return val;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div=
 <WINDOW class="Monitor" text="Monitor15" x="0" y="6" width="320" height="20" id="42" state="213" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="0" precision="3" unit="" value="1">
 <VARIABLE name="value=lines[15]" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/Monitor15/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<VARIABLE name="lines=" value="'getProfile(voice_4_voicingCC): 3','getProfile(voice_4_levelCC): 25','getProfile(voice_4_genderCC): 27','getProfile(voice_3_voicingCC): 88','getProfile(voice_3_levelCC): 21','getProfile(voice_3_genderCC): 23','getProfile(voice_2_voicingCC): 61','getProfile(voice_2_levelCC): 17','getProfile(voice_2_genderCC): 19','getProfile(voice_1_voicingCC): 89','getProfile(voice_1_levelCC): 46','getProfile(voice_1_genderCC): 29','getProfile(harmonyStyleCC): 56','getProfile(harmonyLevelCC): 12','getProfile(harmonyCC): 110','Current device: rack','SET: hardtune = 60','SET: channel = 3','SET: deviceName = Voicelive Rack','SET: voice_4_voicingCC = 3','SET: voice_4_levelCC = 25','SET: voice_4_genderCC = 27','SET: voice_3_voicingCC = 88','SET: voice_3_levelCC = 21','SET: voice_3_genderCC = 23','SET: voice_2_voicingCC = 61','SET: voice_2_levelCC = 17','SET: voice_2_genderCC = 19','SET: voice_1_voicingCC = 89','SET: voice_1_levelCC = 46','SET: voice_1_genderCC = 29','SET: harmonyStyleCC = 56','SET: harmonyLevelCC = 12','SET: harmonyCC = 110','its the rack man','Profile: switchDevice: rack','Container: INIT','Container: onLoad','Profile: onLoad','Actions: onLoad','Full Spring: 30','Thin Spring: 29','Cozy Corner: 28','Indoor Arena: 27','Museum: 26','Dome Chapel: 25','Hockey Arena: 24','St. Joseph Church: 23','Quick Plate: 22','Jazz Plate: 21','Wooden Chamber: 20','Real Plate Long: 19','Real Plate Short: 18','Bright Plate: 17','Bright Chamber: 16','Thin Plate: 15','Reflection Plate: 14','Real Plate: 13','Bouncy Room: 12','Warehouse: 11','Stretched Room: 10','Studio Live Room: 9','Music Club: 8','Dark Room: 7','Library: 6','Snappy Room: 5','Broadway Hall: 4','Amsterdam Hall: 3','Soft Hall: 2','Smooth Plate: 1','Bass Boys ( Low+Lower): 14','Lower Choir ( Low+Lower): 13','Upper Choir (High+Higher): 12','Gospel Low (lower+Low+High): 11','Gospel High (Low+High+Higher): 10','2 Above2 Below (Lower+Low+High+Higher): 9','2 Above Far Below (Lower+High+Higher): 8','1 Above 2 Below (Lower+Low+High): 7','2 Above 1 Below (Low+High+Higher): 6','Far Above Far Below (Higher+Lower): 5','2 Voices Below ( Lower+Low): 4','2 Voices Above (High+Higher): 3','1 Above 1 Below (Low+High): 2','1 Voice Below ( Low): 1','1 Voice Above ( High): 0','Single Slap: 18','Classic Slap: 17','Multitap 6: 16','Multitap 5: 15','Multitap 4: 14','Multitap 3: 13','Multitap 2: 12','Multitap 1: 11','Ping Pong 3: 10','Ping Pong 2: 9','Ping Pong 1: 8','Sixteenth: 7','Long Trip: 6','Long Dot: 5','Dotted: 4','Triplet: 3','Eighth: 2','Quarter: 1','getProfile(voice_4_voicingCC): 3','getProfile(voice_4_levelCC): 25','getProfile(voice_4_genderCC): 27','getProfile(voice_3_voicingCC): 88','getProfile(voice_3_levelCC): 21','getProfile(voice_3_genderCC): 23','getProfile(voice_2_voicingCC): 61','getProfile(voice_2_levelCC): 17','getProfile(voice_2_genderCC): 19','getProfile(voice_1_voicingCC): 89','getProfile(voice_1_levelCC): 46','getProfile(voice_1_genderCC): 29','getProfile(harmonyStyleCC): 56','getProfile(harmonyLevelCC): 12','getProfile(harmonyCC): 110','Current device: rack','SET: hardtune = 60','SET: channel = 3','SET: deviceName = Voicelive Rack','SET: voice_4_voicingCC = 3','SET: voice_4_levelCC = 25','SET: voice_4_genderCC = 27','SET: voice_3_voicingCC = 88','SET: voice_3_levelCC = 21','SET: voice_3_genderCC = 23','SET: voice_2_voicingCC = 61','SET: voice_2_levelCC = 17','SET: voice_2_genderCC = 19','SET: voice_1_voicingCC = 89','SET: voice_1_levelCC = 46','SET: voice_1_genderCC = 29','SET: harmonyStyleCC = 56','SET: harmonyLevelCC = 12','SET: harmonyCC = 110','its the rack man','Profile: switchDevice: rack','Container: INIT','Container: onLoad','Profile: onLoad','Actions: onLoad','Full Spring: 30','Thin Spring: 29','Cozy Corner: 28','Indoor Arena: 27','Museum: 26','Dome Chapel: 25','Hockey Arena: 24','St. Joseph Church: 23','Quick Plate: 22','Jazz Plate: 21','Wooden Chamber: 20','Real Plate Long: 19','Real Plate Short: 18','Bright Plate: 17','Bright Chamber: 16','Thin Plate: 15','Reflection Plate: 14','Real Plate: 13','Bouncy Room: 12','Warehouse: 11','Stretched Room: 10','Studio Live Room: 9','Music Club: 8','Dark Room: 7','Library: 6','Snappy Room: 5','Broadway Hall: 4','Amsterdam Hall: 3','Soft Hall: 2','Smooth Plate: 1','Bass Boys ( Low+Lower): 14','Lower Choir ( Low+Lower): 13','Upper Choir (High+Higher): 12','Gospel Low (lower+Low+High): 11','Gospel High (Low+High+Higher): 10','2 Above2 Below (Lower+Low+High+Higher): 9','2 Above Far Below (Lower+High+Higher): 8','1 Above 2 Below (Lower+Low+High): 7','2 Above 1 Below (Low+High+Higher): 6','Far Above Far Below (Higher+Lower): 5','2 Voices Below ( Lower+Low): 4','2 Voices Above (High+Higher): 3','1 Above 1 Below (Low+High): 2','1 Voice Below ( Low): 1','1 Voice Above ( High): 0','Single Slap: 18','Classic Slap: 17','Multitap 6: 16','Multitap 5: 15','Multitap 4: 14','Multitap 3: 13','Multitap 2: 12','Multitap 1: 11','Ping Pong 3: 10','Ping Pong 2: 9','Ping Pong 1: 8','Sixteenth: 7','Long Trip: 6','Long Dot: 5','Dotted: 4','Triplet: 3','Eighth: 2','Quarter: 1','getProfile(voice_4_voicingCC): 3','getProfile(voice_4_levelCC): 25','getProfile(voice_4_genderCC): 27','getProfile(voice_3_voicingCC): 88','getProfile(voice_3_levelCC): 21','getProfile(voice_3_genderCC): 23','getProfile(voice_2_voicingCC): 61','getProfile(voice_2_levelCC): 17','getProfile(voice_2_genderCC): 19','getProfile(voice_1_voicingCC): 89','getProfile(voice_1_levelCC): 46','getProfile(voice_1_genderCC): 29','getProfile(harmonyStyleCC): 56','getProfile(harmonyLevelCC): 12','getProfile(harmonyCC): 110','Current device: rack','SET: hardtune = 60','SET: channel = 3','SET: deviceName = Voicelive Rack','SET: voice_4_voicingCC = 3','SET: voice_4_levelCC = 25','SET: voice_4_genderCC = 27','SET: voice_3_voicingCC = 88','SET: voice_3_levelCC = 21','SET: voice_3_genderCC = 23','SET: voice_2_voicingCC = 61','SET: voice_2_levelCC = 17','SET: voice_2_genderCC = 19','SET: voice_1_voicingCC = 89','SET: voice_1_levelCC = 46','SET: voice_1_genderCC = 29','SET: harmonyStyleCC = 56','SET: harmonyLevelCC = 12','SET: harmonyCC = 110','its the rack man','Profile: switchDevice: rack','Container: INIT','Container: onLoad','Profile: onLoad','Actions: onLoad','Full Spring: 30','Thin Spring: 29','Cozy Corner: 28','Indoor Arena: 27','Museum: 26','Dome Chapel: 25','Hockey Arena: 24','St. Joseph Church: 23','Quick Plate: 22','Jazz Plate: 21'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="CustomButton" text="PanicButton" x="167" y="326" width="153" height="52" id="43" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="865343,1596013" label_off="Panic!!" label_on="Oooooo.." outline="1">
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/PanicButton/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/PanicButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onPress()" script="enabled = !x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/PanicButton/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="lines=" value="'getProfile(harmonyStyles): { 0:1 Voice Above ( High), 1:1 Voice Below ( Low), 2:1 Above 1 Below (Low+High), 3:2 Voices Above (High+Higher), 4:2 Voices Below ( Lower+Low), 5:Far Above Far Below (Higher+Lower), 6:2 Above 1 Below (Low+High+Higher), 7:1 Above 2 Below (Lower+Low+High), 8:2 Above Far Below (Lower+High+Higher), 9:2 Above2 Below (Lower+Low+High+Higher), 10:Gospel High (Low+High+Higher), 11:Gospel Low (lower+Low+High), 12:Upper Choir (High+Higher), 13:Lower Choir ( Low+Lower), 14:Bass Boys ( Low+Lower) }','getProfile(voice_4_voicingCC): 3','getProfile(voice_4_levelCC): 25','getProfile(voice_4_genderCC): 27','getProfile(voice_3_voicingCC): 88','getProfile(voice_3_levelCC): 21','getProfile(voice_3_genderCC): 23','getProfile(voice_2_voicingCC): 61','getProfile(voice_2_levelCC): 17','getProfile(voice_2_genderCC): 19','getProfile(voice_1_voicingCC): 89','getProfile(voice_1_levelCC): 46','getProfile(voice_1_genderCC): 29','getProfile(harmonyStyleCC): 56','getProfile(harmonyLevelCC): 12','getProfile(harmonyCC): 110','getProfile(harmonyStyles): { 0:1 Voice Above ( High), 1:1 Voice Below ( Low), 2:1 Above 1 Below (Low+High), 3:2 Voices Above (High+Higher), 4:2 Voices Below ( Lower+Low), 5:Far Above Far Below (Higher+Lower), 6:2 Above 1 Below (Low+High+Higher), 7:1 Above 2 Below (Lower+Low+High), 8:2 Above Far Below (Lower+High+Higher), 9:2 Above2 Below (Lower+Low+High+Higher), 10:Gospel High (Low+High+Higher), 11:Gospel Low (lower+Low+High), 12:Upper Choir (High+Higher), 13:Lower Choir ( Low+Lower), 14:Bass Boys ( Low+Lower) }','Current device: rack','SET: hardtune = 60','SET: channel = 3','SET: deviceName = Voicelive Rack','SET: voice_4_voicingCC = 3','SET: voice_4_levelCC = 25','SET: voice_4_genderCC = 27','SET: voice_3_voicingCC = 88','SET: voice_3_levelCC = 21','SET: voice_3_genderCC = 23','SET: voice_2_voicingCC = 61','SET: voice_2_levelCC = 17','SET: voice_2_genderCC = 19','SET: voice_1_voicingCC = 89','SET: voice_1_levelCC = 46','SET: voice_1_genderCC = 29','SET: harmonyStyleCC = 56','SET: harmonyLevelCC = 12','SET: harmonyCC = 110','its the rack man','Profile: switchDevice: rack','Container: INIT','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','POP: 89.000000 , 14 (14) src: local nxt: -1','MIDI OUT { cc:89.000000, val:14 } Voicing','currentValue changed: 14','Container: onLoad','Profile: onLoad','Actions: onLoad','Full Spring: 30','Thin Spring: 29','Cozy Corner: 28','Indoor Arena: 27','Museum: 26','Dome Chapel: 25','Hockey Arena: 24','St. Joseph Church: 23','Quick Plate: 22','Jazz Plate: 21','Wooden Chamber: 20','Real Plate Long: 19','Real Plate Short: 18','Bright Plate: 17','Bright Chamber: 16','Thin Plate: 15','Reflection Plate: 14','Real Plate: 13','Bouncy Room: 12','Warehouse: 11','Stretched Room: 10','Studio Live Room: 9','Music Club: 8','Dark Room: 7','Library: 6','Snappy Room: 5','Broadway Hall: 4','Amsterdam Hall: 3','Soft Hall: 2','Smooth Plate: 1','Bass Boys ( Low+Lower): 14','Lower Choir ( Low+Lower): 13','Upper Choir (High+Higher): 12','Gospel Low (lower+Low+High): 11','Gospel High (Low+High+Higher): 10','2 Above2 Below (Lower+Low+High+Higher): 9','2 Above Far Below (Lower+High+Higher): 8','1 Above 2 Below (Lower+Low+High): 7','2 Above 1 Below (Low+High+Higher): 6','Far Above Far Below (Higher+Lower): 5','2 Voices Below ( Lower+Low): 4','2 Voices Above (High+Higher): 3','1 Above 1 Below (Low+High): 2','1 Voice Below ( Low): 1','1 Voice Above ( High): 0','Bass Boys ( Low+Lower): 14','Lower Choir ( Low+Lower): 13','Upper Choir (High+Higher): 12','Gospel Low (lower+Low+High): 11','Gospel High (Low+High+Higher): 10','2 Above2 Below (Lower+Low+High+Higher): 9','2 Above Far Below (Lower+High+Higher): 8','1 Above 2 Below (Lower+Low+High): 7','2 Above 1 Below (Low+High+Higher): 6','Far Above Far Below (Higher+Lower): 5','2 Voices Below ( Lower+Low): 4','2 Voices Above (High+Higher): 3','1 Above 1 Below (Low+High): 2','1 Voice Below ( Low): 1','1 Voice Above ( High): 0','Single Slap: 18','Classic Slap: 17','Multitap 6: 16','Multitap 5: 15','Multitap 4: 14','Multitap 3: 13','Multitap 2: 12','Multitap 1: 11','Ping Pong 3: 10','Ping Pong 2: 9','Ping Pong 1: 8','Sixteenth: 7','Long Trip: 6','Long Dot: 5','Dotted: 4','Triplet: 3','Eighth: 2','Quarter: 1','POP: 12 , 0 (0) src: local nxt: -1','active: 0.000000','1 voicingCC receive:14','MIDI OUT { cc:12, val:0 } Switch Off','SWITCH OFF: 0','onChange: 0.000000: 0.000000','SET: hardtune = 60','SET: channel = 3','SET: deviceName = Voicelive Rack','SET: voice_4_voicingCC = 3','SET: voice_4_levelCC = 25','SET: voice_4_genderCC = 27','SET: voice_3_voicingCC = 88','SET: voice_3_levelCC = 21','SET: voice_3_genderCC = 23','SET: voice_2_voicingCC = 61','SET: voice_2_levelCC = 17','SET: voice_2_genderCC = 19','SET: voice_1_voicingCC = 89','SET: voice_1_levelCC = 46','SET: voice_1_genderCC = 29','SET: harmonyStyleCC = 56','SET: harmonyLevelCC = 12','SET: harmonyCC = 110','its the rack man','Profile: switchDevice: rack','Container: INIT','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','1 voicingCC receive:14','POP: 89.000000 , 14 (14) src: local nxt: -1','MIDI OUT { cc:89.000000, val:14 } Voicing','currentValue changed: 14','Container: onLoad','Profile: onLoad','Actions: onLoad','Full Spring: 30','Thin Spring: 29','Cozy Corner: 28','Indoor Arena: 27','Museum: 26','Dome Chapel: 25','Hockey Arena: 24','St. Joseph Church: 23','Quick Plate: 22','Jazz Plate: 21','Wooden Chamber: 20','Real Plate Long: 19','Real Plate Short: 18','Bright Plate: 17','Bright Chamber: 16','Thin Plate: 15','Reflection Plate: 14','Real Plate: 13','Bouncy Room: 12','Warehouse: 11','Stretched Room: 10','Studio Live Room: 9','Music Club: 8','Dark Room: 7','Library: 6','Snappy Room: 5','Broadway Hall: 4','Amsterdam Hall: 3','Soft Hall: 2','Smooth Plate: 1','Bass Boys ( Low+Lower): 14','Lower Choir ( Low+Lower): 13','Upper Choir (High+Higher): 12','Gospel Low (lower+Low+High): 11','Gospel High (Low+High+Higher): 10','2 Above2 Below (Lower+Low+High+Higher): 9','2 Above Far Below (Lower+High+Higher): 8','1 Above 2 Below (Lower+Low+High): 7','2 Above 1 Below (Low+High+Higher): 6','Far Above Far Below (Higher+Lower): 5','2 Voices Below ( Lower+Low): 4','2 Voices Above (High+Higher): 3','1 Above 1 Below (Low+High): 2','1 Voice Below ( Low): 1','1 Voice Above ( High): 0','Bass Boys ( Low+Lower): 14','Lower Choir ( Low+Lower): 13','Upper Choir (High+Higher): 12','Gospel Low (lower+Low+High): 11','Gospel High (Low+High+Higher): 10','2 Above2 Below (Lower+Low+High+Higher): 9','2 Above Far Below (Lower+High+Higher): 8','1 Above 2 Below (Lower+Low+High): 7','2 Above 1 Below (Low+High+Higher): 6','Far Above Far Below (Higher+Lower): 5','2 Voices Below ( Lower+Low): 4','2 Voices Above (High+Higher): 3','1 Above 1 Below (Low+High): 2','1 Voice Below ( Low): 1','1 Voice Above ( High): 0','Single Slap: 18','Classic Slap: 17','Multitap 6: 16','Multitap 5: 15','Multitap 4: 14','Multitap 3: 13','Multitap 2: 12','Multitap 1: 11','Ping Pong 3: 10','Ping Pong 2: 9','Ping Pong 1: 8','Sixteenth: 7','Long Trip: 6','Long Dot: 5','Dotted: 4','Triplet: 3','Eighth: 2','Quarter: 1','POP: 12 , 0 (0) src: local nxt: -1','active: 0.000000','1 voicingCC receive:14','MIDI OUT { cc:12, val:0 } Switch Off','SWITCH OFF: 0','onChange: 0.000000: 0.000000','SET: hardtune = 60','SET: channel = 3'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
 <WINDOW class="Tab" text="Device Select" x="0" y="0" width="1008" height="676" id="2" state="0" group="0" font="tahoma,11,0" >
@@ -1484,6 +2037,7 @@ setattribute(this,'colors',def_col);" trigger_script="" trigger_type="5" trigger
 <VARIABLE name="voice_4_genderCC=" value="27" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_4_genderCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="voice_4_levelCC=" value="25" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_4_levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="20502,-19584,18" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="voice_4_voicingCC=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voice_4_voicingCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="harmonyStyles=" value="0,'1 Voice Above ( High)',1,'1 Voice Below ( Low)',2,'1 Above 1 Below (Low+High)',3,'2 Voices Above (High+Higher)',4,'2 Voices Below ( Lower+Low)',5,'Far Above Far Below (Higher+Lower)',6,'2 Above 1 Below (Low+High+Higher)',7,'1 Above 2 Below (Lower+Low+High)',8,'2 Above Far Below (Lower+High+Higher)',9,'2 Above2 Below (Lower+Low+High+Higher)',10,'Gospel High (Low+High+Higher)',11,'Gospel Low (lower+Low+High)',12,'Upper Choir (High+Higher)',13,'Lower Choir ( Low+Lower)',14,'Bass Boys ( Low+Lower)'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/harmonyStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <WINDOW class="Text" text="Devices" x="12" y="134" width="160" height="48" id="11" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Devices">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1571,6 +2125,38 @@ Devices.touch = { common, {
   {'deviceName', 'Voicelive Touch'},
   {'channel', 2}
 }};
+
+Current.harmonyStyles = {
+0, '1 Voice Above ( High)',
+
+1, '1 Voice Below ( Low)',
+
+2, '1 Above 1 Below (Low+High)',
+
+3, '2 Voices Above (High+Higher)',
+
+4, '2 Voices Below ( Lower+Low)',
+
+5, 'Far Above Far Below (Higher+Lower)',
+
+6, '2 Above 1 Below (Low+High+Higher)',
+
+7, '1 Above 2 Below (Lower+Low+High)',
+
+8, '2 Above Far Below (Lower+High+Higher)',
+
+9, '2 Above2 Below (Lower+Low+High+Higher)',
+
+10, 'Gospel High (Low+High+Higher)',
+
+11, 'Gospel Low (lower+Low+High)',
+
+12, 'Upper Choir (High+Higher)',
+
+13, 'Lower Choir ( Low+Lower)',
+
+14, 'Bass Boys ( Low+Lower)'
+};
 " trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="applyConfig(target, props)" script="decl i=0, length=sizeof(props), prop, val;
 for (i=0; i < length; i+=2) {
@@ -1582,7 +2168,7 @@ for (i=0; i < length; i+=2) {
 " trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Profile/applyConfig" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="CustomButton" text="DebugButton" x="683" y="69" width="176" height="52" id="1" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="DEBUG OFF" label_on="DEBUG ON" outline="1">
-<PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/DebugButton/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/DebugButton/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/DebugButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="debug('showDebug: ' + x);
 showDebug = round(x);" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/DebugButton/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
@@ -1592,8 +2178,11 @@ showDebug = round(x);" trigger_script="x" trigger_type="0" trigger="1" clock="0"
 <VARIABLE name="showDebug=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/showDebug" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="frame=" value="10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/frame" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="initFrame=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/initFrame" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="enabled=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/enabled" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="debug(msg)" script="Debug.lines = {msg, Debug.lines};" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/debug" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="stringify(obj)" script="decl str='',i=0, length=sizeof(obj), prop, val;
+<SCRIPT name="stringify(obj)" script="if (sizeof(obj) == 1) return '' + obj;
+
+decl str='',i=0, length=sizeof(obj), prop, val;
 for (i=0; i < length; i+=2) {
 	if (str == '') str = '{ ';
 	else str = str + ', ';
@@ -1618,6 +2207,7 @@ frame = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="
 " trigger_script="" trigger_type="1" trigger="1" clock="0" clock_div="4" osc_message="/Container/onFrame" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="init()" script="debug('Container: INIT');
 Profile.switchDevice();
+enabled = 1;
 //onDeviceChange();" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
