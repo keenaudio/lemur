@@ -1,0 +1,140 @@
+<JZML>
+<WINDOW class="Container" text="uMod" x="0" y="0" width="698" height="498" id="6" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
+<WINDOW class="CustomButton" text="OnOff" x="0" y="0" width="120" height="52" id="14" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="865343,1596013" label_off="Off" label_on="On" outline="1">
+<PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lastValue=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="//debug('onChange: ' + x + ': ' + Level.x);
+if (x) { // && Level.x == 0) {
+	debug(displayName + ' SWITCH ON! ' + lastValue);
+	sendCC(activeCC, 64, displayName + ' Switch On');
+	//sendCC(levelCC, max(lastValue, Level.minValue+1), displayName + ' Switch On');
+} else if (!x) {
+	lastValue = Level.currentValue;
+
+	debug(displayName + ' SWITCH OFF: ' + lastValue);
+	sendCC(activeCC, 0, displayName + ' Switch Off');
+	//sendCC(levelCC, 0, 'Switch Off');
+}
+
+active = x;
+
+//Level.x = x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/OnOff/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Fader" text="Level" x="0" y="52" width="120" height="430" id="15" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="0" unit=" dB" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.640777" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=db" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=round(x*(127-minValue)) + minValue" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="db=-60 + (currentValue/127)*60" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/db" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29536,18" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="minValue=80" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Level/minValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onChange()" script="//active = (currentValue > 0);
+OnOff.x = (currentValue > 0);
+if (z) sendCC(levelCC, currentValue, displayName + ' Level');
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Level/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+debug(displayName + ' levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Switches" text="Switches" x="129" y="0" width="553" height="482" id="17" state="1" group="0" font="tahoma,16,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="3" label="0" multicolor="0" multilabel="1" paint="0" radio="1" row="8">
+<PARAM name="x=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=active ? 0 : -0.2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="pads=" value="0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="currentValue=codes[firstof(x)]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="codes=" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/Switches/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onReceive()" script="decl _val = received[1];
+decl _src = received[2];
+
+if (_src == 'remote') {
+
+decl plen = sizeof(pads), pval = pads[_val];
+log(displayName + stringify({
+	'plen', plen,
+	'pval', pval
+}));
+decl _x = stretch(0, plen);
+_x = replace(_x, 1, pval);
+x = _x;
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Switches/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="decl this, red, green, blue, grey;
+
+this = getobject();
+
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+decl colors = {red,green,blue,grey,red,green};
+//decl styles = {
+//0,'Octave Down',
+//1,'Octave Up',
+//2,'Mixed Octaves Choir',
+//3,'Unison Choir'
+//};
+
+decl labels = -1;
+codes = -1; // lookup midi code for pad index
+pads = stretch(0, 128); // lookup pad index for midi code
+
+//decl styles = st;
+decl i=0, length=sizeof(styles), code, label;
+for (i=0; i < length; i+=2) {
+	code = styles[i];
+	label = styles[i+1];
+
+  codes = codes != -1 ? { codes, code } : { code };
+  labels = labels != -1 ? { labels, label } : { label };
+  pads = replace(pads, sizeof(codes)-1, code);
+
+debug(label + ': ' + code);
+}
+
+
+setattribute(this,'labels',labels);
+//setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Switches/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onChange()" script="log('onChange: ' + currentValue);
+OnOff.x = 1;
+sendCC(styleCC, currentValue, displayName + ' Menu');
+
+
+" trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/Switches/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<VARIABLE name="levelCC=" value="90" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/levelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="styleCC=" value="50" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/styleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="displayName=" value="'uMod'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/displayName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=" value="1.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="styles=" value="1,'Micromod Clone',2,'Micromod Wider',3,'Thicken',4,'Light Chorus',5,'Medium Chorus',6,'Wide Chorus',7,'Mono Chorus',8,'Fast Rotor',9,'Flanger',10,'Flange Feedback',11,'Flange Negative',12,'Mono Flange',13,'Soft Flange',14,'Panner',15,'Tube',16,'Up Tube',17,'Down Tube',18,'Down & Up Tube',19,'Rise and Fall',20,'Ottowa Wide',21,'Cylon Mono',22,'Cylon Stereo',23,'Alien Voiceover',24,'Underwater'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/styles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="activeCC=" value="116" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/FX/uMod/activeCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onLoad()" script="displayName = getattribute(getobject(), 'name');
+//setattribute(Text, 'content', displayName);
+
+//setattribute(OnOff, 'label_off', displayName); // + ': Off');
+//setattribute(OnOff, 'label_on', displayName); // + ': On');
+" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onReceive()" script="decl cc = received[0], val = received[1], src = received[2];
+if (cc == activeCC) {
+	//Level.onReceive();
+	OnOff.x = (val >= 64);
+} else if (cc == levelCC) {
+	//debug('enableCC receive:' + _val);
+	//OnOff.x = round(_val/64);
+	Level.onReceive();
+} else if (cc == styleCC) {
+	//debug('styleCC receive:' + _val);
+	////Style.onReceive();
+	//StyleMenu.onReceive
+
+	Switches.onReceive();
+}" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onActive()" script="decl this = getobject();
+decl color = active ? RGB(1,1,1) : RGB(0.5,0.5,0.5);
+log('color: ' + color);
+setattribute(this, 'color', color);" trigger_script="active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/FX/uMod/onActive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>
