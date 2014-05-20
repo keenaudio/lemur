@@ -1,0 +1,67 @@
+<JZML>
+<WINDOW class="Canvas" text="HarmonyStyle" x="0" y="0" width="244" height="50" id="15" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+for (i = 0; i < num; i++) {
+	if (getexpression(c, steps[i])) {
+		drawSingle(x, y, w, h);
+	}
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, bgColor);
+	canvas_fill(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/HarmonyStyle/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>

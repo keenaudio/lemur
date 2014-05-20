@@ -1717,7 +1717,7 @@ decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
 //debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
 if (!z) x = _x;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Level/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Voices" x="125" y="89" width="616" height="566" id="4" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="Voices" x="121" y="89" width="616" height="566" id="4" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Container" text="Voice1" x="0" y="0" width="150" height="552" id="3" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Container" text="GenderFader" x="60" y="0" width="76" height="216" id="11" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="879231" label="1" tabbar="1" meta="0">
 <WINDOW class="MultiSlider" text="Fader" x="0" y="0" width="60" height="200" id="14" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" bipolar="1" capture="1" color="1596013" gradient="1" grid="0" grid_steps="1" horizontal="0" label="0" multicolor="0" nbr="1" physic="0">
@@ -2632,46 +2632,7 @@ Voice4.voicingCC = getProfile('voice_4_voicingCC');
 </WINDOW>
 <WINDOW class="LemurMenu" text="StyleMenu" x="353" y="33" width="376" height="36" id="5" state="209" group="0" font="tahoma,16,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Option 1,Option 2">
 <PARAM name="selection=" value="10.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="codes=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="pads=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="currentValue=codes[selection]" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StyleMenu/currentValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="onLoad()" script="decl this, red, green, blue, grey;
-
-this = getobject();
-
-red = RGB(1,0,0);
-green = RGB(0,1,0);
-blue = RGB(0,0,1);
-grey = RGB(.5,.5,.5);
-
-decl colors = {red,green,blue,grey,red,green};
-//decl styles = {
-//0,'Octave Down',
-//1,'Octave Up',
-//2,'Mixed Octaves Choir',
-//3,'Unison Choir'
-//};
-
-decl labels = -1;
-codes = -1; // lookup midi code for pad index
-pads = stretch(0, 128); // lookup pad index for midi code
-
-decl styles = harmonyStyles;
-decl i=0, length=sizeof(styles), code, label;
-for (i=0; i < length; i+=2) {
-	code = styles[i];
-	label = '  ' + styles[i+1];
-
-  codes = codes != -1 ? { codes, code } : { code };
-  labels = labels != -1 ? { labels, label } : { label };
-  pads = replace(pads, sizeof(codes)-1, code);
-
-debug(label + ': ' + code);
-}
-
-
-setattribute(this,'items',labels);
-//setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StyleMenu/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onReceive()" script="decl _val = received[1];
 decl _src = received[2];
 
@@ -2687,7 +2648,7 @@ sendCC(styleCC, currentValue, 'Harmony StyleMenu Change');
 
 " trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StyleMenu/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="Choir" x="776" y="114" width="176" height="530" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="Choir" x="751" y="448" width="216" height="207" id="6" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="LemurMenu" text="ChoirMenu" x="0" y="0" width="160" height="30" id="6" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" scale="0" content="Option 1,Option 2">
 <PARAM name="selection=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirMenu/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="codes=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/ChoirMenu/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -2745,25 +2706,1120 @@ sendCC(choirCC, currentValue, 'Choir Menu Change');
 
 " trigger_script="currentValue" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/ChoirMenu/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Fader" text="Amount" x="30" y="45" width="100" height="424" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
-<PARAM name="x=" value="0.952756" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Amount/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Amount/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="value=x*100" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Amount/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Amount/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Amount/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Amount/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Fader" text="Fader" x="30" y="45" width="100" height="424" id="7" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="1" physic="1" precision="0" unit="%" value="1" zoom="1.000000">
+<PARAM name="x=" value="0.952756" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Fader/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Fader/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x*100" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Fader/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Fader/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Fader/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Fader/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="//debug('onChange: ' + currentValue);
 if (z) sendCC(choirLevelCC, round(x*127), 'Choir Level');
-" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/Amount/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/Fader/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onReceive()" script="
 decl _val = received[1];
 //decl _src = received[1];
 //decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
 //debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
-if (!z) x = _val / 127;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/Amount/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+if (!z) x = _val / 127;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/Fader/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Text" text="Text" x="0" y="469" width="160" height="48" id="8" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Choir">
+<WINDOW class="Text" text="Text" x="0" y="205" width="160" height="48" id="8" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Choir">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Text/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Knob" text="Knob" x="26" y="30" width="104" height="119" id="9" state="5" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="865343,1596013" cursor="0" grid="0" grid_steps="1" label="0" mode="1" physic="1" precision="0" type="0" unit="%" value="1">
+<PARAM name="x=" value="0.700000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Knob/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="z=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Knob/z" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="value=x*100" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Knob/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Knob/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=0.9" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Knob/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Choir/Knob/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onReceive()" script="
+decl _val = received[1];
+//decl _src = received[1];
+//decl _x = (_val > minValue) ? (_val - minValue)/(127 - minValue) : 0;
+//debug('1 levelCC receive: ' + _val + ' _x: ' + _x + ' z? ' + z);
+if (!z) x = _val / 127;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/Knob/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onChange()" script="//debug('onChange: ' + currentValue);
+if (z) sendCC(choirLevelCC, round(x*127), 'Choir Level');
+" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Choir/Knob/onChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Switches" text="Switches" x="170" y="0" width="183" height="96" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="4" label="0" multicolor="0" multilabel="1" paint="0" radio="0" row="4">
+<PARAM name="x=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Switches/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onReceive()" script="decl _val = received[1];
+decl _src = received[2];
+
+if (_src == 'remote') {
+
+decl plen = sizeof(pads), pval = pads[_val];
+log(displayName + stringify({
+	'plen', plen,
+	'pval', pval
+}));
+decl _x = stretch(0, plen);
+_x = replace(_x, 1, pval);
+x = _x;
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Switches/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Container" text="Container2" x="751" y="100" width="216" height="348" id="12" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
+<WINDOW class="Tab" text="1" x="0" y="0" width="200" height="300" id="2" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Canvas" text="OneAbove" x="0" y="0" width="200" height="50" id="17" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneAbove/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/OneAbove/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/OneAbove/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="OneBelow" x="0" y="50" width="200" height="50" id="18" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/OneBelow/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/OneBelow/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/OneBelow/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="2" x="0" y="0" width="200" height="300" id="1" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Canvas" text="Two2Abov" x="0" y="0" width="200" height="50" id="20" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Two2Abov/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="Two2Below" x="0" y="100" width="200" height="50" id="21" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two2Below/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Two2Below/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Two2Below/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="Two1Above1Below" x="0" y="50" width="200" height="50" id="22" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Two1Above1Below/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="TwoFarAboveBelow" x="0" y="150" width="200" height="50" id="23" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/TwoFarAboveBelow/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="3" x="0" y="0" width="200" height="300" id="3" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Canvas" text="Three1Above2Below" x="0" y="0" width="200" height="50" id="23" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Three1Above2Below/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="Three2Above1Below" x="0" y="50" width="200" height="50" id="24" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Three2Above1Below/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="Three2AboveFarBelow" x="0" y="100" width="200" height="50" id="25" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Three2AboveFarBelow/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</WINDOW>
+<WINDOW class="Tab" text="4" x="0" y="0" width="200" height="300" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Canvas" text="Four2Above2Below" x="0" y="50" width="200" height="50" id="25" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/Four2Above2Below/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="FourGospelHigh" x="0" y="100" width="200" height="50" id="26" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourGospelHigh/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="FourGospelLow" x="0" y="150" width="200" height="50" id="27" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourGospelLow/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="FourUpperChoir" x="0" y="0" width="200" height="50" id="28" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourUpperChoir/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="FourLowerChoir" x="0" y="250" width="200" height="50" id="29" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourLowerChoir/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="Canvas" text="FourBassBoys" x="0" y="200" width="200" height="50" id="30" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
+<VARIABLE name="octaveDown=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/octaveDown" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24553,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="bass=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/bass" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-8167,29300,28257" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lower=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/lower" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="17184,24936,25197" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="low=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/low" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8295,125" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="high=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/high" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12314,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="higher=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/higher" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,25964,29224" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="octaveUp=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/octaveUp" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24558,19968,20" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="active=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16404,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="draw()" script="
+decl c = getobject();
+decl rect = getattribute(getobject(), 'rect');
+canvas_clear(c);
+
+decl i,x,y,w,width,height,h,radius;
+x = 0;
+y = 0;
+width = rect[2];
+height = rect[3];
+//w = width;
+h = height;
+radius = 1;
+
+decl steps = {
+	'octaveDown',
+	'bass',
+	'lower',
+	'low',
+	'high',
+	'higher',
+	'octaveUp'
+};
+
+decl num = sizeof(steps);
+w = width/num;
+decl color;
+for (i = 0; i < num; i++) {
+	color = active ? {0,1,0} : bgColor;
+	if (!getexpression(c, steps[i])) color = 0;
+	drawSingle(x, y, w, h, color);
+	
+	x += w;
+}" trigger_script="" trigger_type="255" trigger_name="onRedraw" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/draw" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="drawSingle(x,y,w,h,color)" script="
+decl c = getobject();
+decl i,radius;
+
+radius = 1;
+//decl color = 1.0;
+//decl highlight = 0.5;
+//decl selected = 0;
+
+	canvas_beginPath(c);
+	canvas_moveTo(c, x + radius, y);
+	canvas_lineTo(c, x + w - radius, y);
+	canvas_arcTo(c, x + w, y, x + w, y + radius, radius);
+	canvas_lineTo(c, x + w, y + h - radius);
+	canvas_arcTo(c, x + w, y + h, x + w - radius, y + h, radius);
+	canvas_lineTo(c, x + radius, y + h);
+	canvas_arcTo(c, x, y + h, x, y + h - radius, radius);
+	canvas_lineTo(c, x, y + radius);
+	canvas_arcTo(c, x, y, x + radius, y, radius);
+	//canvas_addHitRegion(c, 0, whiteKeys[i]);
+	canvas_closePath(c);
+	canvas_setFillStyle(c, color);
+	canvas_setStrokeStyle(c, {.4,.4,.4});
+	canvas_fill(c);
+	canvas_stroke(c);
+" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/Container2/FourBassBoys/drawSingle" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
 </WINDOW>
 </WINDOW>
 <VARIABLE name="styleCC=56" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/styleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -2774,6 +3830,9 @@ if (!z) x = _val / 127;" trigger_script="" trigger_type="4" trigger="1" clock="0
 <VARIABLE name="choirCC=" value="73" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/choirCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="choirLevelCC=" value="72" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/choirLevelCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,-29888,18" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="active=" value="0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/active" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,3,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="codes=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/codes" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="pads=" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/pads" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12310,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="displayName=" value="'Harmony'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/displayName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16403,0,-256" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onReceive()" script="decl _cc = received[0];
 decl _val = received[1];
 if (_cc == levelCC) {
@@ -2785,14 +3844,15 @@ if (_cc == levelCC) {
 	debug('Harmony styleCC receive:' + _val);
 	//Style.onReceive();
 	StyleMenu.onReceive();
+	Switches.onReceive();
 } else if (_cc == choirCC) {
 	log('Harmony choirCC: ' + _val);
 	Choir.ChoirMenu.onReceive();
 } else if (_cc == choirLevelCC) {
 	log('Harmony choirLevelCC: ' + _val);
-	Choir.Amount.onReceive();
+	Choir.Fader.onReceive();
+	Choir.Knob.onReceive();
 }" trigger_script="received" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="onLoad()" script="" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onDeviceChange()" script="decl c = Profile.currentDevice;
 
 log('Harmony: onDeviceChanged: ' + c);
@@ -2806,6 +3866,46 @@ styleCC = getProfile('harmonyStyleCC');
 choirCC = getProfile('choirStyleCC');
 choirLevelCC = getProfile('choirLevelCC');
 " trigger_script="Profile.currentDevice" trigger_type="0" trigger="2" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="onLoad()" script="show(Choir.Fader, 0);
+decl this, red, green, blue, grey;
+
+this = getobject();
+displayName = getattribute(this, 'name');
+
+red = RGB(1,0,0);
+green = RGB(0,1,0);
+blue = RGB(0,0,1);
+grey = RGB(.5,.5,.5);
+
+decl colors = {red,green,blue,grey,red,green};
+//decl styles = {
+//0,'Octave Down',
+//1,'Octave Up',
+//2,'Mixed Octaves Choir',
+//3,'Unison Choir'
+//};
+
+decl labels = -1;
+codes = -1; // lookup midi code for pad index
+pads = stretch(0, 128); // lookup pad index for midi code
+
+decl styles = harmonyStyles;
+decl i=0, length=sizeof(styles), code, label;
+for (i=0; i < length; i+=2) {
+	code = styles[i];
+	label = '  ' + styles[i+1];
+
+  codes = codes != -1 ? { codes, code } : { code };
+  labels = labels != -1 ? { labels, label } : { label };
+  pads = replace(pads, sizeof(codes)-1, code);
+
+debug(label + ': ' + code);
+}
+
+
+setattribute(StyleMenu,'items',labels);
+setattribute(Switches,'labels',labels);
+//setattribute(this,'colors',colors);" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
 <WINDOW class="Tab" text="Reverb" x="0" y="0" width="992" height="660" id="10" state="0" group="0" font="tahoma,11,0" >
