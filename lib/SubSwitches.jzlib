@@ -1,0 +1,27 @@
+<JZML>
+<WINDOW class="Switches" text="Switches3" x="0" y="0" width="183" height="96" id="26" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="4" label="0" multicolor="0" multilabel="1" paint="0" radio="0" row="4">
+<PARAM name="x=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="startIndex=" value="6" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/startIndex" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="endIndex=" value="8" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/endIndex" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="displayName=" value="'S3'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/displayName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="313,19968,20" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="onReceive()" script="decl _val = received[1];
+decl _src = received[2];
+
+//if (_src == 'remote') {
+
+decl plen = (endIndex - startIndex) + 1, pval = pads[_val];
+log(displayName + stringify({
+	'plen', plen,
+	'pval', pval
+}));
+decl v = _val >= startIndex && _val <= endIndex;
+decl _x = stretch(0, plen);
+_x = replace(_x, v, pval);
+x = _x;
+//}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/onReceive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="setLabels(labels)" script="decl this = getobject();
+decl len = (endIndex - startIndex) + 1;
+setattribute(this,'labels',subarray(labels, startIndex, len));" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Harmony/StylesGrid/Switches3/setLabels" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>
