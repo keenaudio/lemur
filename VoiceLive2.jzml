@@ -472,7 +472,7 @@ if (x) { // && Level.x == 0) {
 	sendCC(activeCC, 64, displayName + ' Switch On');
 	//sendCC(levelCC, max(lastValue, Level.minValue+1), displayName + ' Switch On');
 } else if (!x) {
-	lastValue = Level.currentValue;
+	//lastValue = Level.currentValue;
 
 	debug(displayName + ' SWITCH OFF: ' + lastValue);
 	sendCC(activeCC, 0, displayName + ' Switch Off');
@@ -4124,7 +4124,7 @@ if (x) { // && Level.x == 0) {
 	sendCC(activeCC, 64, displayName + ' Switch On');
 	//sendCC(levelCC, max(lastValue, Level.minValue+1), displayName + ' Switch On');
 } else if (!x) {
-	lastValue = Level.currentValue;
+//	lastValue = Level.currentValue;
 
 	debug(displayName + ' SWITCH OFF: ' + lastValue);
 	sendCC(activeCC, 0, displayName + ' Switch Off');
@@ -5078,7 +5078,7 @@ Profile.initVoicings();
 </WINDOW>
 <WINDOW class="Container" text="LogLevel" x="583" y="460" width="226" height="200" id="21" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Switches" text="Switches" x="0" y="48" width="210" height="136" id="20" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="2" label="0" multicolor="0" multilabel="1" paint="0" radio="1" row="2">
-<PARAM name="x=" value="0.000000,1.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/LogLevel/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="x=" value="0.000000,0.000000,1.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/LogLevel/Switches/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/LogLevel/Switches/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="logLevel = firstof(x);
 debugi('LogLevel onChange: ' + logLevel);
@@ -5236,7 +5236,7 @@ Mixer.init();" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_di
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/PanicButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onPress()" script="enabled = !x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/PanicButton/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<VARIABLE name="lines=" value="'Reverb: init','Voice4 init() genderCC: 27 levelCC: 25 voicingCC: 3','Voice3 init() genderCC: 23 levelCC: 21 voicingCC: 88','Voice2 init() genderCC: 19 levelCC: 17 voicingCC: 61','Voice1 init() genderCC: 29 levelCC: 46 voicingCC: 89','Harmony: init.  currentStyle: 2.000000','----- Actions.startInterface','-------- Actions.init 17165.742188','*---- Debug ----*'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lines=" value="'-------- Actions.init 17187.708984','*---- Debug ----*'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onLoad()" script="lines = {'*---- Debug ----*'};" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="Profile" x="0" y="0" width="176" height="64" id="29" state="4" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
@@ -5657,7 +5657,7 @@ Current.voicings = {
 <VARIABLE name="send=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/send" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="target=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/target" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="waitFrames=10" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/waitFrames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="logLevel=1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/logLevel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="logLevel=2" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/logLevel" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="logInternal=0" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/logInternal" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="debug(msg)" script="if (logLevel <= 1) outputDebug(msg);" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/debug" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="stringify(obj)" script="if (sizeof(obj) == 1) return '' + obj[0];
