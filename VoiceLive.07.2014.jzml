@@ -3,7 +3,7 @@
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Container" x="0" y="0" width="1024" height="724" id="7" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Container" text="Actions" x="0" y="0" width="1008" height="708" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="1">
-<WINDOW class="Tab" text="Mixer" x="0" y="0" width="992" height="660" id="7" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="Mixer" x="0" y="0" width="992" height="660" id="7" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="Mixer" x="0" y="0" width="992" height="660" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Container" text="Main" x="0" y="100" width="116" height="544" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Fader" text="Level" x="0" y="0" width="100" height="466" id="2" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="0" precision="0" unit=" dB" value="1" zoom="1.000000">
@@ -1043,14 +1043,18 @@ if (cc == activeCC) {
 }" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Harmony/onCC" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="Hardtune" x="360" y="-6" width="205" height="70" id="12" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
-<WINDOW class="CustomButton" text="OnOff" x="0" y="0" width="189" height="54" id="14" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="4144959,32512" label_off="Hardtune" label_on="Hardtune" outline="1">
+<WINDOW class="CustomButton" text="OnOff" x="0" y="0" width="189" height="54" id="14" state="241" group="0" font="tahoma,20,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="0" bitmap="0,0" capture="1" color="32512,32512" label_off="Stretched Room" label_on="Stretched Room" outline="1">
 <PARAM name="x=" value="1.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Mixer/Hardtune/OnOff/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Mixer/Hardtune/OnOff/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="lastValue=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Mixer/Hardtune/OnOff/lastValue" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="28708,49,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onChange()" script="if (frame < 1) return;
 
+//log2('x: ' + x);
+
+//x = 0;
+log2('hardtune: changing tab, x: ' + x);
 selecttab(Actions, hardtuneTabIndex);
-x = 1;
+//x = 1;
 
 /*
 //debug('onChange: ' + x + ': ' + Level.x);
@@ -1081,40 +1085,55 @@ if (x) { // && Level.x == 0) {
 decl this = getobject();
 //decl fader = 1596013; //4144959, 
 decl green = RGB(0, 1, 0), gray = RGB(0.5,0.5,0.5), white = RGB(1,1,1);
-setattribute(OnOff, 'color', { gray, green });
+//setattribute(OnOff, 'color', { gray, green });
+
+updateLabel();
+onActive();
 
 " trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Hardtune/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onCC(cc, val, src)" script="/*if (cc == activeCC) {
 	debug(displayName + ': onReceive: ' + cc + ', ' + val + ', ' + src);
 	OnOff.x = (val >= 64);
 }*/" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Hardtune/onCC" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="labelChange()" script="decl l = Actions.Hardtune.TouchHardtune.currentLabel;
-log2('Setting hardtune mixer label: ' + l);
-//decl this = getobject();
-setattribute(OnOff, 'label_off', l);
-setattribute(OnOff, 'label_on', l);" trigger_script="Actions.Hardtune.TouchHardtune.currentLabel" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Hardtune/labelChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="labelChange()" script="updateLabel();" trigger_script="Actions.Hardtune.TouchHardtune.currentLabel" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Hardtune/labelChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onActive()" script="if (frame < 1) return;
 ///log(active ? 'active' : 'NOT active');
 decl active = Actions.Hardtune.active;
+log2('Mixer hardtune active: ' + active);
 decl this = getobject();
 //decl fader = 1596013; //4144959, 
 decl green = RGB(0, 1, 0), gray = RGB(0.5,0.5,0.5), white = RGB(1,1,1);
 decl color = active ? highlightColor : gray;
 //log('color: ' + color);
-//setattribute(OnOff, 'color', color);
+setattribute(OnOff, 'color', { active ? {green,green} : {gray, gray }});
+OnOff.x = active;
 //setattribute(CurrentStyle, 'color', { active ? green : gray, white });
 //setattribute(Level, 'color', active ? highlightColor : gray);
-setattribute(OnOff, 'color', { gray, highlightColor });
+//setattribute(OnOff, 'color', { gray, highlightColor });
 
 //decl c2 = getattribute(Level, 'color');
 //log('c2: ' + c2);
 " trigger_script="Actions.Hardtune.active" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Hardtune/onActive" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="updateLabel()" script="
+decl d = Profile.currentDevice;
+
+decl this = getobject();
+if (d == 'touch') {
+decl l = Actions.Hardtune.TouchHardtune.currentLabel;
+log2('Setting hardtune mixer label: ' + l);
+//decl this = getobject();
+setattribute(OnOff, 'label_off', l);
+setattribute(OnOff, 'label_on', l);
+} else {
+	setattribute(OnOff, 'label_off', displayName + ': Off');
+	setattribute(OnOff, 'label_on', displayName + ': On');
+
+}" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/Mixer/Hardtune/updateLabel" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <VARIABLE name="displayName=" value="'Mixer'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/Mixer/displayName" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-84,-30208,-84" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onDeviceChange()" script="decl c = Profile.currentDevice;
 
 log2('Mixer: onDeviceChanged: ' + c);
-
 
 // Mixer
 Main.levelCC = getProfile('outputCC');
@@ -1124,10 +1143,12 @@ LeadMute.activeCC = getProfile('leadMuteCC');
 Pitch.activeCC = getProfile('pitchCC');
 Tone.activeCC = getProfile('toneCC');
 
+Hardtune.updateLabel();
+
 Harmony.styles = getProfile('harmonyStyles');
 Harmony.styleCC = getProfile('harmonyStyleCC');
 Harmony.activeCC = getProfile('harmonyCC');
-log2('Mixer, Harmony.activeCC: ' + Harmony.activeCC);
+//log2('Mixer, Harmony.activeCC: ' + Harmony.activeCC);
 Harmony.levelCC = getProfile('harmonyLevelCC');
 
 uMod.styles = getProfile('uModStyles');
@@ -1416,7 +1437,7 @@ setattribute(TouchHardtune, 'color', active ? highlightColor : gray);
 if (frame < 1) return;
 //decl cc = received[0], val = received[1], src = received[2];
 if (cc == activeCC) {
-	debug(displayName + ': onReceive: ' + cc + ', ' + val + ', ' + src);
+	log2(displayName + ': onReceive: ' + cc + ', ' + val + ', ' + src);
 	//Level.onReceive();
 	OnOff.x = (val >= 64);
 } /*else if (cc == levelCC) {
@@ -5271,7 +5292,7 @@ radius = 1;
 </WINDOW>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="Key/Scale" x="0" y="0" width="992" height="660" id="13" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="Key/Scale" x="0" y="0" width="992" height="660" id="13" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="KeyScale" x="0" y="100" width="964" height="503" id="1" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Container" text="Keyboard" x="35" y="28" width="952" height="315" id="25" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Canvas" text="WhiteKeys" x="16" y="11" width="592" height="309" id="25" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="1" redrawMode="1" touchSupport="1">
@@ -5494,17 +5515,6 @@ canvas_refresh(BlackKeys3);" trigger_script="selected" trigger_type="0" trigger=
 <WINDOW class="Switches" text="Scale" x="51" y="351" width="610" height="105" id="26" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,32768" column="6" label="1" multicolor="0" multilabel="1" paint="0" radio="1" row="1">
 <PARAM name="x=" value="1.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Scale/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,1,1" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Scale/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="init()" script="decl labels = {
-	'Major',
-	'Minor Harm',
-	'Minor Nat',
-	'Minor Asc',
-	'Chromatic',
-	'Custom'
-};
-
-decl this = getobject();
-setattribute(this,'labels',labels);" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/Scale/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Text" text="Label1" x="58" y="18" width="72" height="30" id="27" state="213" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="Key">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/Label1/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -5512,6 +5522,7 @@ setattribute(this,'labels',labels);" trigger_script="" trigger_type="4" trigger=
 <VARIABLE name="key=Keyboard.selected" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/key" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="keyCC=47" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/keyCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="25963,15993,2314" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="scaleCC=48" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/scaleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="scales=" value="'Major 7th','Major','Major Blues','Minor-Harmonic','Minor-Natural','Minor-Melodic','Custom'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Actions/KeyScale/scales" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onKeyChange()" script="if (frame < 1) return;
 sendCC(keyCC, key, 'Key Change');" trigger_script="key" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onKeyChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onScaleChange()" script="if (frame < 1) return;
@@ -5534,7 +5545,10 @@ decl _x = stretch(0, sizeof(Scale.x));
 _x = replace(_x, 1, val);
 Scale.x = _x;
 }" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/onCC" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="init()" script="Scale.init();" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="init()" script="//Scale.init();
+updateScales();" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="updateScales()" script="decl this = getobject();
+setattribute(Scale,'labels',scales);" trigger_script="scales" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/KeyScale/updateScales" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="KeyScaleHeader" x="0" y="0" width="992" height="100" id="18" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Canvas" text="BG" x="0" y="0" width="976" height="84" id="10" state="5" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" aaLevel="0" redrawMode="0" touchSupport="1">
@@ -5743,6 +5757,12 @@ Hardtune.activeCC = getProfile('hardtuneCC');
 Hardtune.styleCC = getProfile('hardtuneStyleCC');
 Hardtune.styles = getProfile('hardtuneStyles');
 //log2('styles: ' + sizeof(Hardtune.styles));
+
+if (c == 'touch') {
+	KeyScale.scales = Profile.touchScales;
+} else {
+	KeyScale.scales = getProfile('hardtuneScales');
+}
 KeyScale.keyCC = getProfile('hardtuneKeyCC');
 KeyScale.scaleCC = getProfile('hardtuneScaleCC');
 
@@ -5771,11 +5791,7 @@ Double.styleCC = getProfile('doubleStyleCC');
 Transducer.styles = getProfile('transStyles');
 Transducer.activeCC = getProfile('transCC');
 Transducer.levelCC = getProfile('transLevelCC');
-Transducer.styleCC = getProfile('transStyleCC');
-
-
-
-" trigger_script="Profile.currentDevice" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+Transducer.styleCC = getProfile('transStyleCC');" trigger_script="Profile.currentDevice" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Actions/onDeviceChange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="onLoad()" script="//handlers = {''};
 //KeyScale.initHandler();
 
@@ -5887,14 +5903,14 @@ Transducer.onCC(cc, val, src);
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/PanicButton/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onPress()" script="enabled = !x;" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/PanicButton/onPress" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<VARIABLE name="lines=" value="'Actions, Current device: touch','Mixer, Harmony.activeCC: 110','Mixer: onDeviceChanged: touch','Hardtune, Current device: touch','Actions, Current device: touch','Mixer, Harmony.activeCC: 110','Mixer: onDeviceChanged: touch','Hardtune, Current device: touch','currentDevice: touch','*---- Debug ----*'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="lines=" value="'Actions, Current device: touch','Setting hardtune mixer label: Stretched Room','Mixer: onDeviceChanged: touch','Hardtune, Current device: touch','Actions, Current device: touch','Setting hardtune mixer label: Stretched Room','Mixer: onDeviceChanged: touch','Hardtune, Current device: touch','currentDevice: touch','*---- Debug ----*'" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Debug/lines" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="onLoad()" script="lines = {'*---- Debug ----*'};" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/Container/Debug/onLoad" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="Profile" x="0" y="0" width="176" height="64" id="29" state="4" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" tabbar="1" meta="0">
 <WINDOW class="Text" text="Devices" x="0" y="0" width="160" height="48" id="11" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Devices">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="rack=" value="'outputCC',7,'voicesLevelCC',85,'delayReverbLevelCC',86,'auxLevelCC',58,'allOffCC',123,'sustainCC',64,'harmonyHoldCC',119,'bypassCC',114,'dryPanCC',10,'leadMuteCC',13,'toneCC',106,'pitchCC',107,'stepCC',115,'guitarFxCC',108,'guitarLevelCC',109,'guitarRevStyleCC',9,'guitarRevLevelCC',22,'guitarModStyleCC',26,'guitarModLevelCC',28,'hardtuneCC',113,'hardtuneKeyCC',47,'hardtuneScaleCC',48,'hardtuneStyleCC',24,'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'umodCC',116,'umodStyleCC',50,'umodLevelCC',90,'reverbCC',112,'reverbStyleCC',52,'reverbLevelCC',91,'delayCC',117,'delayStyleCC',51,'delayLevelCC',62,'doubleCC',111,'doubleStyleCC',53,'doubleLevelCC',15,'transCC',118,'transStyleCC',55,'transLevelCC',105,'rhythmCC',104,'rhythmStyleCC',87,'rhythmDepthCC',102,'deviceName','Voicelive Rack','channel',3,'hardtune',60" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/rack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11641,24930,25971" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="touch=" value="'outputCC',7,'voicesLevelCC',85,'delayReverbLevelCC',86,'auxLevelCC',58,'allOffCC',123,'sustainCC',64,'harmonyHoldCC',119,'bypassCC',114,'dryPanCC',10,'leadMuteCC',13,'toneCC',106,'pitchCC',107,'stepCC',115,'guitarFxCC',108,'guitarLevelCC',109,'guitarRevStyleCC',9,'guitarRevLevelCC',22,'guitarModStyleCC',26,'guitarModLevelCC',28,'hardtuneCC',113,'hardtuneKeyCC',47,'hardtuneScaleCC',48,'hardtuneStyleCC',24,'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'umodCC',116,'umodStyleCC',50,'umodLevelCC',90,'reverbCC',112,'reverbStyleCC',52,'reverbLevelCC',91,'delayCC',117,'delayStyleCC',51,'delayLevelCC',62,'doubleCC',111,'doubleStyleCC',53,'doubleLevelCC',15,'transCC',118,'transStyleCC',55,'transLevelCC',105,'rhythmCC',104,'rhythmStyleCC',87,'rhythmDepthCC',102,'deviceName','Voicelive Touch','channel',2" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/touch" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-4076,0,-256" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="touch=" value="'outputCC',7,'voicesLevelCC',85,'delayReverbLevelCC',86,'auxLevelCC',58,'allOffCC',123,'sustainCC',64,'harmonyHoldCC',119,'bypassCC',114,'dryPanCC',10,'leadMuteCC',13,'toneCC',106,'pitchCC',107,'stepCC',115,'guitarFxCC',108,'guitarLevelCC',109,'guitarRevStyleCC',9,'guitarRevLevelCC',22,'guitarModStyleCC',26,'guitarModLevelCC',28,'hardtuneCC',113,'hardtuneKeyCC',47,'hardtuneScaleCC',48,'hardtuneStyleCC',24,'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'umodCC',116,'umodStyleCC',50,'umodLevelCC',90,'reverbCC',112,'reverbStyleCC',52,'reverbLevelCC',91,'delayCC',117,'delayStyleCC',51,'delayLevelCC',62,'doubleCC',111,'doubleStyleCC',53,'doubleLevelCC',15,'transCC',118,'transStyleCC',55,'transLevelCC',105,'rhythmCC',104,'rhythmStyleCC',87,'rhythmDepthCC',102,'deviceName','Voicelive Touch','channel',2,'hardtuneKeyCC',30,'hardtuneScaleCC',31" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/touch" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-4076,0,-256" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="vl3=" value="'outputCC',7,'voicesLevelCC',85,'delayReverbLevelCC',86,'auxLevelCC',58,'allOffCC',123,'sustainCC',64,'harmonyHoldCC',119,'bypassCC',114,'dryPanCC',10,'leadMuteCC',13,'toneCC',106,'pitchCC',107,'stepCC',115,'guitarFxCC',108,'guitarLevelCC',109,'guitarRevStyleCC',9,'guitarRevLevelCC',22,'guitarModStyleCC',26,'guitarModLevelCC',28,'hardtuneCC',113,'hardtuneKeyCC',47,'hardtuneScaleCC',48,'hardtuneStyleCC',24,'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'umodCC',116,'umodStyleCC',50,'umodLevelCC',90,'reverbCC',112,'reverbStyleCC',52,'reverbLevelCC',91,'delayCC',117,'delayStyleCC',51,'delayLevelCC',62,'doubleCC',111,'doubleStyleCC',53,'doubleLevelCC',15,'transCC',118,'transStyleCC',55,'transLevelCC',105,'rhythmCC',104,'rhythmStyleCC',87,'rhythmDepthCC',102,'deviceName','VoiceLive 3','channel',4,'harmonyVibratoCC',1,'guitarRhythmCC',16,'guitarDelayCC',17,'guitarCompressorCC',19,'guitarModCC',21,'guitarOctaverCC',23,'guitarAmpCC',25,'guitarWahCC',27,'guitarBoostCC',29,'hardtuneKeyCC',30,'hardtuneScaleCC',31,'guitarReverbCC',46,'guitarHitCC',47,'vocalSynthCC',50,'rhythmCC',51,'vocalHitCC',56,'choirCC',104,'stepCC',115,'harmonyHoldCC',119,'allOffCC',123" send="0" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Devices/vl3" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="320,852,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <WINDOW class="Text" text="Current" x="0" y="0" width="160" height="48" id="12" state="241" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" content="Profile.Current">
@@ -5953,8 +5969,8 @@ Transducer.onCC(cc, val, src);
 <VARIABLE name="naturalPlayStyle=" value="'Aux'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/naturalPlayStyle" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,26740,20512" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="voicings=" value="'Octave Down','Bass','Lower','Low','High','Higher','Octave Up'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/voicings" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-16116,19968,20" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="numVoicings=" value="7" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/numVoicings" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="250,0,-256" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="hardtuneKeyCC=" value="47" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneKeyCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="15159,24820,17196" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="hardtuneScaleCC=" value="48" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneScaleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11892,28534,25449" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="hardtuneKeyCC=" value="30" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneKeyCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="15159,24820,17196" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="hardtuneScaleCC=" value="31" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneScaleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="11892,28534,25449" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="harmonyVibratoCC=" value="1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/harmonyVibratoCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="guitarRhythmCC=" value="16" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/guitarRhythmCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-24543,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="guitarDelayCC=" value="17" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/guitarDelayCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="450,19968,20" kbmouse_scale="0,1,0,1"/>
@@ -5977,6 +5993,7 @@ Transducer.onCC(cc, val, src);
 <VARIABLE name="allOffCC=" value="123" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/allOffCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="18,4,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="hardtuneStyleCC=" value="24" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneStyleCC" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-208,12336,-208" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="hardtuneStyles=" value="10,'Natural',1,'Hard',4,'Up',5,'Down',12,'Natural Male',3,'Hard Male',8,'Male Up',7,'Male Down',11,'Natural Female',2,'Hard Female',6,'Female Up',9,'Female Down'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneStyles" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="hardtuneScales=" value="'Major','Minor-Harmonic','Minor-Natural','Minor-Ascending','Chromatic','Custom'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/Current/hardtuneScales" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,640,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <VARIABLE name="devices={'touch','rack', 'vl3'}" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/devices" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="commonConfig=" value="0.000000" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/commonConfig" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-20461,0,0" kbmouse_scale="0,1,0,1"/>
@@ -5984,6 +6001,7 @@ Transducer.onCC(cc, val, src);
 <VARIABLE name="ccNames=" value="-1,-1,-1,'voice_4_voicingCC',-1,-1,-1,'outputCC',-1,'guitarRevStyleCC','dryPanCC',-1,'harmonyLevelCC','leadMuteCC',-1,'doubleLevelCC',-1,'voice_2_levelCC',-1,'voice_2_genderCC',-1,'voice_3_levelCC','guitarRevLevelCC','voice_3_genderCC','hardtuneStyleCC','voice_4_levelCC','guitarModStyleCC','voice_4_genderCC','guitarModLevelCC','voice_1_genderCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'voice_1_levelCC','hardtuneKeyCC','hardtuneScaleCC',-1,'umodStyleCC','delayStyleCC','reverbStyleCC','doubleStyleCC',-1,'transStyleCC','harmonyStyleCC',-1,'auxLevelCC',-1,-1,'voice_2_voicingCC','delayLevelCC',-1,'sustainCC',-1,-1,-1,-1,-1,-1,-1,'choirLevelCC','choirStyleCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'voicesLevelCC','delayReverbLevelCC','rhythmStyleCC','voice_3_voicingCC','voice_1_voicingCC','umodLevelCC','reverbLevelCC',-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,'rhythmDepthCC',-1,'rhythmCC','transLevelCC','toneCC','pitchCC','guitarFxCC','guitarLevelCC','harmonyCC','doubleCC','reverbCC','hardtuneCC','bypassCC','stepCC','umodCC','delayCC','transCC','harmonyHoldCC',-1,-1,-1,'allOffCC',-1,-1,-1,-1" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/ccNames" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,15,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="ccs=" value="'outputCC',7,'voicesLevelCC',85,'delayReverbLevelCC',86,'auxLevelCC',58,'allOffCC',123,'sustainCC',64,'harmonyHoldCC',119,'bypassCC',114,'dryPanCC',10,'leadMuteCC',13,'toneCC',106,'pitchCC',107,'stepCC',115,'guitarFxCC',108,'guitarLevelCC',109,'guitarRevStyleCC',9,'guitarRevLevelCC',22,'guitarModStyleCC',26,'guitarModLevelCC',28,'hardtuneCC',113,'hardtuneKeyCC',47,'hardtuneScaleCC',48,'hardtuneStyleCC',24,'harmonyCC',110,'harmonyLevelCC',12,'harmonyStyleCC',56,'choirStyleCC',73,'choirLevelCC',72,'voice_1_genderCC',29,'voice_1_levelCC',46,'voice_1_voicingCC',89,'voice_2_genderCC',19,'voice_2_levelCC',17,'voice_2_voicingCC',61,'voice_3_genderCC',23,'voice_3_levelCC',21,'voice_3_voicingCC',88,'voice_4_genderCC',27,'voice_4_levelCC',25,'voice_4_voicingCC',3,'umodCC',116,'umodStyleCC',50,'umodLevelCC',90,'reverbCC',112,'reverbStyleCC',52,'reverbLevelCC',91,'delayCC',117,'delayStyleCC',51,'delayLevelCC',62,'doubleCC',111,'doubleStyleCC',53,'doubleLevelCC',15,'transCC',118,'transStyleCC',55,'transLevelCC',105,'rhythmCC',104,'rhythmStyleCC',87,'rhythmDepthCC',102" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/ccs" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,8230,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="deviceLabels={ 'VoiceLive Touch', 'VoiceLive Rack', 'VoiceLive 3' }" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/deviceLabels" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="touchScales=" value="'Major 7th','Major','Major Blues','Minor-Harmonic','Minor-Natural','Minor-Melodic','Custom'" send="1" osc_target="0" osc_trigger="1" osc_message="/Container/Profile/touchScales" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="12352,0,0" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="init()" script="debugi('Profile: onLoad');
 initCCs();
 //currentDevice = 0;
@@ -5991,9 +6009,21 @@ ccNames = stretch(-1, 128);
 setCCNames(ccs);
 
 
+touchScales = {
+'Major 7th',
+'Major',
+'Major Blues',
+'Minor-Harmonic',
+'Minor-Natural',
+'Minor-Melodic',
+'Custom'
+};
+
 Devices.touch = { ccs, {
   {'deviceName', 'Voicelive Touch'},
-  {'channel', 2}
+  {'channel', 2},
+  { 'hardtuneKeyCC', 30 },
+  { 'hardtuneScaleCC', 31}
 }};
 
 Devices.rack = { ccs, {
@@ -6155,6 +6185,15 @@ Current.naturalPlayStyles = {
 'Shift',
 'Notes',
 '4Chan'
+};
+
+Current.hardtuneScales = {
+'Major',
+'Minor-Harmonic',
+'Minor-Natural',
+'Minor-Ascending',
+'Chromatic',
+'Custom'
 };
 
 // Style Names
@@ -6437,7 +6476,7 @@ decl objlen = 3;
 
 // Process incoming MIDI queue
 if (inQueue != -1) {
-	log2('---onFrame: inQueue');
+	debug('---onFrame: inQueue');
 
 	enabled = 0;
 
@@ -6467,7 +6506,7 @@ if (inQueue != -1) {
 }
 
 if (outQueue != -1) {
-	log2('---onFrame: outQueue');
+	debug('---onFrame: outQueue');
 
 	while (outQueue != -1) {
 	
